@@ -14,7 +14,10 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::all();
+        return view('productos', [
+            'productos' => $productos
+        ]);
     }
 
     /**
@@ -24,7 +27,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        return view('createProducto');
     }
 
     /**
@@ -35,7 +38,21 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto = new Producto;
+        $producto->nombre = request('nombre');
+        $producto->precio = request('precio');
+        $producto->descripcion = request('descripcion');
+        $producto->disponible = request('disponible');
+        $producto->cantidadMinima = request('cantidadMinima');
+
+        $producto->save();
+
+        echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
+
+        $productos = Producto::all();
+        return view('productos', [
+            'productos' => $productos
+        ]);
     }
 
     /**
@@ -44,9 +61,12 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Producto $producto)
+    public function show($id)
     {
-        //
+        $producto = Producto::find($id);
+        return view('detalleProducto', [
+            'producto' => $producto
+        ]);
     }
 
     /**
@@ -55,9 +75,12 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
-        //
+        $producto = Producto::find($id);
+        return view('editarProducto', [
+            'producto' => $producto
+        ]);
     }
 
     /**
