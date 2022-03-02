@@ -14,9 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('carritos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->unsignedInteger('id_producto');
+            $table->foreign('id_producto')->references('id')->on('productos');
+            $table->unsignedInteger('id_pedido');
+            $table->foreign('id_pedido')->references('id')->on('pedidos');
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
+
     }
 
     /**

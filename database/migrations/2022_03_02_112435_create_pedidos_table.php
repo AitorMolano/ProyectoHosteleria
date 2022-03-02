@@ -13,10 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('pedidos');
+
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->unsignedInteger('id_cliente');
+            $table->foreign('id_cliente')->references('id')->on('users');
+            $table->integer('suma_Precio');
+            $table->enum('estado', ['recibido', 'en proceso', 'preparado'])->default('recibido');
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
