@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductoController extends Controller
 {
@@ -14,10 +15,26 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos = Producto::all();
-        return view('productos', [
-            'productos' => $productos
-        ]);
+        // $productos = Producto::all();
+        // return view('productos', [
+        //     'productos' => $productos
+        // ]);
+        return view('productos');
+    }
+    public function save(Request $request)
+    {
+        //comprobar permisos
+            
+        //mirmaos si el cliente nos ha devuelto un archivo
+        if($request->hasFile('foto')){
+            $foto = $request->file('foto');
+            $foto_nueva  = $foto->getClientOriginalName();
+            $ruta = public_path('fotos/'.$foto_nueva);
+            copy($foto,$ruta);
+            $producto = new Producto();
+            $producto->foto = $foto_nueva;
+            $producto->save();
+        }
     }
 
     /**

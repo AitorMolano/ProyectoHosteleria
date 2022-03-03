@@ -22,7 +22,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Route::get('/', [ProductoController::class, 'index'])->name('productos');
+Route::get('/', [ProductoController::class, 'index'])->name('productos');
+Route::post('/prueba', [ProductoController::class, 'prueba'])->name('prueba');
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('producto/create', [ProductoController::class, 'create'])->name('createProduct');

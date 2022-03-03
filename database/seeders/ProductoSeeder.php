@@ -20,11 +20,12 @@ class ProductoSeeder extends Seeder
 
         for ($i=0; $i < 10; $i++) { 
             DB::table('productos')->insert([
-                'nombre' => $faker->unique()->title(18),
-                'precio' => $faker->randomNumber(2),
+                'nombre' => $faker->unique()->name(18),
+                'precio' => $faker->randomFloat(2,0,50),
                 'descripcion' => $faker->text(90),
+                'foto' => $faker->imageUrl(),
                 'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
-                'cantidadMinima' => $faker->randomNumber(10),
+                'cantidadMinima' => $faker->randomDigitNotNull(1,10),
             ]);
         }
     }
