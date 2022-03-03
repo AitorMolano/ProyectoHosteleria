@@ -8,7 +8,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <h1>Hosteleria</h1>
+    <header>
+        <h1>Hosteleria</h1>
+    </header>
+    
     
         @yield('content')
 </body>

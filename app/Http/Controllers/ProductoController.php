@@ -63,7 +63,7 @@ class ProductoController extends Controller
        // echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
 
         $productos = Producto::all();
-        return view('createProducto');
+        return redirect('producto/create');
     }
 
     /**
