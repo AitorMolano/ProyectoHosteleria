@@ -89,17 +89,15 @@
                             <label for="rol" class="col-md-4 col-form-label text-md-end">{{ __('Rol')}}</label>
                             <div class="d-flex justify-content-around col-md-6">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" value="1" id="radioAdmin">
                                     <label class="form-check-label" for="flexRadioDefault1">Administrador</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioCliente" value="0" checked>
                                     <label class="form-check-label" for="flexRadioDefault2">Cliente</label>
                                 </div>
                             </div>
                         </div>
-
-
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
