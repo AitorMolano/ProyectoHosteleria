@@ -6,7 +6,7 @@
   <h2>Crear producto</h2>
   </div>
 
-<form action="{{ route('storeProduct')}}" method="post">
+<form action="{{ route('storeProduct')}}" method="post" enctype="multipart/form-data">
   @csrf
   <div class="row">
     <div class="form-group col-md-4">

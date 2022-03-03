@@ -54,6 +54,9 @@ class ProductoController extends Controller
             copy($foto,$ruta);
             $producto->foto = $foto_nueva;
         }
+        else{
+            echo '<script type="text/javascript">alert("No entra en foto");</script>';
+        }
 
         $producto->save();
 
