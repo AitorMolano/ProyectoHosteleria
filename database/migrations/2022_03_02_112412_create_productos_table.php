@@ -19,6 +19,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('precio');
+            $table->string('foto');
             $table->text('descripcion');
             $table->boolean('disponible');
             $table->integer('cantidadMinima');

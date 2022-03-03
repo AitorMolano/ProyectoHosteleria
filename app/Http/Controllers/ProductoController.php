@@ -27,7 +27,18 @@ class ProductoController extends Controller
         //comprobar permisos
         //mirmaos si el cliente nos ha devuelto un archivo
         if($request->hasFile('foto')){
-            echo $request->file('foto')->getClientOriginalName();
+            $foto = $request->file('foto');
+            $foto_nueva  = $foto->getClientOriginalName();
+            $ruta = public_path('fotos/'.$foto_nueva);
+            copy($foto,$ruta);
+            $producto = new Producto();
+            $producto->nombre = 'a';
+            $producto->precio = 1;
+            $producto->cantidadMinima = 1;
+            $producto->descripcion = 'a';
+            $producto->disponible = true;
+            $producto->foto = $foto_nueva;
+            $producto->save();
         }
     }
 
