@@ -12,7 +12,6 @@
     <div class="card">
         <div class="card-body">
             <h3 class="card-title">{{ $producto -> name; }}</h3>
-            <h6 class="card-subtitle">Noseque</h6>
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-6">
                     <div class="white-box text-center"><img src="https://via.placeholder.com/430x600/00CED1/000000" class="img-responsive"></div>
