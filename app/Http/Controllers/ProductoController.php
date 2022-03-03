@@ -14,10 +14,21 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos = Producto::all();
-        return view('productos', [
-            'productos' => $productos
-        ]);
+        // $productos = Producto::all();
+        // return view('productos', [
+        //     'productos' => $productos
+        // ]);
+        return view('productos');
+    }
+    public function prueba(Request $request)
+    {
+        
+        
+        //comprobar permisos
+        //mirmaos si el cliente nos ha devuelto un archivo
+        if($request->hasFile('foto')){
+            echo $request->file('foto')->getClientOriginalName();
+        }
     }
 
     /**
