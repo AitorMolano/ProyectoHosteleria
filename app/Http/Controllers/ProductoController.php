@@ -18,21 +18,6 @@ class ProductoController extends Controller
         $productos = Producto::all();
         return view('home')->with('productos',$productos);
     }
-    public function save(Request $request)
-    {
-        //comprobar permisos
-            
-        //mirmaos si el cliente nos ha devuelto un archivo
-        if($request->hasFile('foto')){
-            $foto = $request->file('foto');
-            $foto_nueva  = $foto->getClientOriginalName();
-            $ruta = public_path('fotos/'.$foto_nueva);
-            copy($foto,$ruta);
-            $producto = new Producto();
-            $producto->foto = $foto_nueva;
-            $producto->save();
-        }
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -59,14 +44,23 @@ class ProductoController extends Controller
         $producto->disponible = request('disponible');
         $producto->cantidadMinima = request('cantidadMinima');
 
+        if($request->hasFile('foto')){
+            $foto = $request->file('foto');
+            $foto_nueva  = $foto->getClientOriginalName();
+            $ruta = public_path('fotos/'.$foto_nueva);
+            copy($foto,$ruta);
+            $producto->foto = $foto_nueva;
+        }
+        else{
+            echo '<script type="text/javascript">alert("No entra en foto");</script>';
+        }
+
         $producto->save();
 
-        echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
+       // echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
 
         $productos = Producto::all();
-        return view('productos', [
-            'productos' => $productos
-        ]);
+        return view('createProducto');
     }
 
     /**
