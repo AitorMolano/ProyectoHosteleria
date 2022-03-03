@@ -21,21 +21,6 @@ class ProductoController extends Controller
         // ]);
         return view('productos');
     }
-    public function save(Request $request)
-    {
-        //comprobar permisos
-            
-        //mirmaos si el cliente nos ha devuelto un archivo
-        if($request->hasFile('foto')){
-            $foto = $request->file('foto');
-            $foto_nueva  = $foto->getClientOriginalName();
-            $ruta = public_path('fotos/'.$foto_nueva);
-            copy($foto,$ruta);
-            $producto = new Producto();
-            $producto->foto = $foto_nueva;
-            $producto->save();
-        }
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -61,6 +46,14 @@ class ProductoController extends Controller
         $producto->descripcion = request('descripcion');
         $producto->disponible = request('disponible');
         $producto->cantidadMinima = request('cantidadMinima');
+
+        if($request->hasFile('foto')){
+            $foto = $request->file('foto');
+            $foto_nueva  = $foto->getClientOriginalName();
+            $ruta = public_path('fotos/'.$foto_nueva);
+            copy($foto,$ruta);
+            $producto->foto = $foto_nueva;
+        }
 
         $producto->save();
 

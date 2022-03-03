@@ -13,6 +13,7 @@ class Producto extends Model
         "nombre",
         "precio",
         "descripcion",
+        "foto",
         "disponible",
         "cantidadMinima",
     ];

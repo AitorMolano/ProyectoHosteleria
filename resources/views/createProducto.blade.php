@@ -40,8 +40,8 @@
   </div>
   <div class="row">
     <div class="form-group col-md-4">
-      <label for="imagen">Imagen</label>
-      <input type="file" class="form-control" id="imagen" placeholder="">
+      <label for="foto">Imagen</label>
+      <input type="file" class="form-control" id="foto" name="foto" placeholder="">
     </div>
   </div>
   <div class="row mt-3">
