@@ -25,3 +25,5 @@ Auth::routes();
 //Route::get('/', [ProductoController::class, 'index'])->name('productos');
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('producto/create', [ProductoController::class, 'create'])->name('createProduct');
+Route::post('producto/store', [ProductoController::class, 'store'])->name('storeProduct');
