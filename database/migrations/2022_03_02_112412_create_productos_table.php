@@ -22,8 +22,6 @@ return new class extends Migration
             $table->text('descripcion');
             $table->boolean('disponible');
             $table->integer('cantidadMinima');
-            $table->unsignedInteger('id_admin');
-            $table->foreign('id_admin')->references('id')->on('users');
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();

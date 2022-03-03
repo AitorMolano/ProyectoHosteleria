@@ -25,3 +25,4 @@ Auth::routes();
 //Route::get('/', [ProductoController::class, 'index'])->name('productos');
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
