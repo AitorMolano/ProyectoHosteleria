@@ -11,26 +11,22 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="card-body">
-                <h3 class="card-title">{{ $producto -> nombre }}</h3>
-                <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-6">
-                        <div class="white-box text-center"><img src="{{ $producto->foto }}" class="img-responsive"></div>
+                    <div class="col-lg-5">
+                        <div class="white-box"><img src="{{ $producto->foto }}" class="img-responsive"></div>
                     </div>
-                    <div class="col-lg-7 col-md-7 col-sm-6">
-                        <h4 class="box-title mt-5">Descripción</h4>
-                        <p>{{ $producto->descripcion }}</p>
-                        <h2 class="mt-5">{{ $producto->precio }} €</h2>
-                        <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
-                            <i class="fa fa-shopping-cart"></i>
-                        </button>
-                        <button class="btn btn-primary btn-rounded">Comprar</button>
+                    <div class="col-lg-7">
+                        <h3 class="card-title">{{ $producto -> nombre }}</h3>
+                            <h4 class="box-title mt-5">Descripción</h4>
+                            <p>{{ $producto->descripcion }}</p>
+                            <h2 class="mt-5">{{ $producto->precio }} €</h2>
+                            <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
+                            <button class="btn btn-primary btn-rounded">Comprar</button>
+                            <a class="btn btn-outline-dark mt-auto" href="{{ route('productos') }}">Volver</a>
+                            <a class="btn btn-outline-dark mt-auto" href="{{ route('createProduct') }}">Crear</a>
                     </div>
-                </div>
-            </div>
         </div>
     </div>
-    <a href="{{route('productos') }}">Volver</a>
-    <a href="{{route('createProduct') }}">Crear</a>
 </body>
 </html>
