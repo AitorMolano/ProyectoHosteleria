@@ -7,12 +7,21 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-header{
-    position:absolute !important;
-    top:0 !important;
+main{
+    min-height: calc(100vh - 142.06px);
+    margin-top:2px;
+}
+
+.logo{
+    height: 200px;
+}
+  
+.logo img{
+    height: 100%;
 }
 
 footer{
-    position:absolute !important;
-    bottom: 0 !important;
+    position:absolute ;
+    bottom: 0 ;
+    width:100%;
 }

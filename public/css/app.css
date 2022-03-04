@@ -11388,11 +11388,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-header {
-  position: absolute !important;
-  top: 0 !important;
+main {
+  min-height: calc(100vh - 142.06px);
+  margin:10px;
 }
 
-footer {
-  bottom: 0 !important;
+.logo{
+  height: 200px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
+
