@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hosteleria</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 <body class='bg-ligth' style="height: 100vh;">
     <div  class="container-fluid" style="height:100%"> 
@@ -48,18 +50,22 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a class="dropdown-item" href="{{ route('createProduct') }}">Crear</a>    
+                                <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('indexCarrito')}}">Carrito</a>
-                                    <a class="dropdown-item" href="#">Perfil</a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
+                            </li>
+
+                            <li>
+                                <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="#" data-original-title="Add to cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
                             </li>
                         @endguest
                     </ul>
@@ -76,10 +82,9 @@
         
             @yield('content')
         </main>
-
-        <footer class="bg-dark text-white row d-flex mt-2 justify-content-between">     
-            <p class='col-5 m-3 p-3'>FUNDACIÓN DIOCESANAS - JESÚS OBRERO FUNDAZIOA  © EGIBIDE</p>   
-            <p class='col-5 m-3 p-3'>Diseñado por Aitor,Rafa,Alaitz :S | Desarrollado por Aitor,Rafa,Alaitz :D </p>       
+        <footer class="bg-dark text-white row d-flex mt-3 justify-content-between">     
+            <p class='col-6 my-3 p-3'>FUNDACIÓN DIOCESANAS - JESÚS OBRERO FUNDAZIOA  © EGIBIDE</p>   
+            <p class='col-6 my-3 p-3'>Diseñado por Aitor,Rafa,Alaitz :S | Desarrollado por Aitor,Rafa,Alaitz :D </p>       
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

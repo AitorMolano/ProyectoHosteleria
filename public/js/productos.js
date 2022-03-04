@@ -41,11 +41,11 @@ function primeros12(){
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver M&aacute;s</a></div>
-                        <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
-                                <i class="fa fa-shopping-cart"></i>
-                            </button>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+todos_productos[x]['id']+`">Ver M&aacute;s</a></div>
                     </div>
+                    <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="#" data-original-title="Add to cart">
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
                 </div>
             </div>
         `;
