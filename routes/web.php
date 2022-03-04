@@ -16,17 +16,19 @@ use App\Http\Controllers\ProductoController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 Route::get('productos/{id}', [ProductoController::class, 'show'])->name('detalleProd');
 
+Route::get('producto/create', [ProductoController::class, 'create'])->name('createProduct');
 
+Route::post('producto/store', [ProductoController::class, 'store'])->name('storeProduct');
 
 Auth::routes();
 
-//Route::get('/', [ProductoController::class, 'index'])->name('productos');
+Route::get('home', [ProductoController::class, 'index'])->name('productos');
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 

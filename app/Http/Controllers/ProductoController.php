@@ -15,7 +15,7 @@ class ProductoController extends Controller
     public function index()
     {
         $productos = Producto::all();
-        return view('productos', [
+        return view('home', [
             'productos' => $productos
         ]);
     }
@@ -45,12 +45,23 @@ class ProductoController extends Controller
         $producto->disponible = request('disponible');
         $producto->cantidadMinima = request('cantidadMinima');
 
+        if($request->hasFile('foto')){
+            $foto = $request->file('foto');
+            $foto_nueva  = $foto->getClientOriginalName();
+            $ruta = public_path('fotos/'.$foto_nueva);
+            copy($foto,$ruta);
+            $producto->foto = $foto_nueva;
+        }
+        else{
+            echo '<script type="text/javascript">alert("No entra en foto");</script>';
+        }
+
         $producto->save();
 
         echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
-
+        
         $productos = Producto::all();
-        return view('productos', [
+        return view('home', [
             'productos' => $productos
         ]);
     }

@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Detalle Producto</title>
 </head>
 <body>
     <div class="container">
-        <div class="card">
+        <div class="row">
             <div class="card-body">
-                <h3 class="card-title">{{ $producto -> name; }}</h3>
+                <h3 class="card-title">{{ $producto -> nombre }}</h3>
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-6">
                         <div class="white-box text-center"><img src="{{ $producto->foto }}" class="img-responsive"></div>
@@ -29,5 +30,7 @@
             </div>
         </div>
     </div>
+    <a href="{{route('productos') }}">Volver</a>
+    <a href="{{route('createProduct') }}">Crear</a>
 </body>
 </html>

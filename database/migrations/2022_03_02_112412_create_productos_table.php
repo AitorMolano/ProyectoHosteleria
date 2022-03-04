@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('precio');
             $table->text('descripcion');
+            $table->string('foto');
             $table->boolean('disponible');
             $table->integer('cantidadMinima');
             $table->timestamps();
