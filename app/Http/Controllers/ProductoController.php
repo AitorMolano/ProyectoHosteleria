@@ -57,19 +57,10 @@ class ProductoController extends Controller
 
         $producto->save();
 
-<<<<<<< HEAD
-        echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
-        
-        $productos = Producto::all();
-        return view('home', [
-            'productos' => $productos
-        ]);
-=======
        // echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
 
         $productos = Producto::all();
         return redirect('producto/create');
->>>>>>> createProduct
     }
 
     /**
