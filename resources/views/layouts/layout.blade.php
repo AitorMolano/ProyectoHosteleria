@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hosteleria</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body class='bg-ligth' style="height: 100vh;">
     <div  class="container-fluid" style="height:100%"> 
@@ -14,7 +13,7 @@
             
         <nav class="navbar navbar-expand-md navbar-dark bg-purple shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('productos') }}">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     Escuela Hosteleria
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -54,14 +53,13 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
                             </li>
                             <li>
-                                <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="{{route('verCarrito')}}" data-original-title="Add to cart">
+                                <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="#" data-original-title="Add to cart">
                                     <i class="fa fa-shopping-cart"></i>
                                 </a>
                             </li>
@@ -81,7 +79,7 @@
             @yield('content')
         </main>
 
-        <footer class="bg-dark text-white row d-flex  justify-content-between">     
+        <footer class="bg-dark text-white row d-flex mt-2 justify-content-between">     
             <p class='col-5 m-3 p-3'>FUNDACIÓN DIOCESANAS - JESÚS OBRERO FUNDAZIOA  © EGIBIDE</p>   
             <p class='col-5 m-3 p-3'>Diseñado por Aitor,Rafa,Alaitz :S | Desarrollado por Aitor,Rafa,Alaitz :D </p>       
         </footer>

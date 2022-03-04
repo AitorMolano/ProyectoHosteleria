@@ -11390,12 +11390,18 @@ textarea.form-control-lg {
 }
 main {
   min-height: calc(100vh - 142.06px);
-  margin:10px;
+  margin-top: 2px;
 }
 
-.logo{
+.logo {
   height: 200px;
-  padding-bottom: 0;
-  margin-bottom: 0;
 }
 
+.logo img {
+  height: 100%;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+}

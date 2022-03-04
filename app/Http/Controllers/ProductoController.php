@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductoController extends Controller
 {
@@ -14,10 +15,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos = Producto::all();
-        return view('home', [
-            'productos' => $productos
-        ]);
+        return view('home');
     }
 
     /**
@@ -50,7 +48,7 @@ class ProductoController extends Controller
             $foto_nueva  = $foto->getClientOriginalName();
             $ruta = public_path('fotos/'.$foto_nueva);
             copy($foto,$ruta);
-            $producto->foto = $foto_nueva;
+            $producto->foto = 'fotos/'.$foto_nueva;
         }
         else{
             echo '<script type="text/javascript">alert("No entra en foto");</script>';
@@ -58,12 +56,10 @@ class ProductoController extends Controller
 
         $producto->save();
 
-        echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
-        
+       // echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
+
         $productos = Producto::all();
-        return view('home', [
-            'productos' => $productos
-        ]);
+        return redirect('producto/create');
     }
 
     /**
