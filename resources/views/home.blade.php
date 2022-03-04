@@ -20,7 +20,6 @@
                             <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
                                 <i class="fa fa-shopping-cart"></i>
                             </button>
-                            <button class="btn btn-primary btn-rounded">Comprar</button>
                         </div>     
                     </div>
                </div>

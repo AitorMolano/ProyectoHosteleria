@@ -20,7 +20,7 @@ class CarritoController extends Controller
             return view('carrito');
         }
         else{
-            echo '<script type="text/javascript">alert("Inicia sesion primero");</script>';
+            // no se ejecuta por el redirect :: echo '<script type="text/javascript">alert("Inicia sesion primero");</script>';
             return redirect('login');
         }
     }

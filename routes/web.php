@@ -35,6 +35,6 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('producto/create', [ProductoController::class, 'create'])->name('createProduct');
 Route::post('producto/store', [ProductoController::class, 'store'])->name('storeProduct');
 
-
-Route::get('carrito/index', [CarritoController::class, 'index'])->name('createCarrito');
+Route::get('carrito/index', [CarritoController::class, 'index'])->name('indexCarrito');
 Route::get('carrito/show', [CarritoController::class, 'show'])->name('showCarrito');
+
