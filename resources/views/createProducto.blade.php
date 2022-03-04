@@ -52,5 +52,6 @@
 
   
 </form>
+<a href="{{ route('createCarrito')}}">Carrito</a>
 </div>
 @endsection
