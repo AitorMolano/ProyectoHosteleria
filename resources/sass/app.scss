@@ -6,3 +6,13 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+header{
+    position:absolute !important;
+    top:0 !important;
+}
+
+footer{
+    position:absolute !important;
+    bottom: 0 !important;
+}

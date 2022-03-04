@@ -9,7 +9,7 @@
 </head>
 <body class='bg-ligth' style="height: 100vh;">
     <div class="container-fluid" style="height:100%"> 
-        <header class='row'style="height:20%">
+        <header class='row'>
             <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,11 +36,11 @@
         </div>
         </header>
 
-        <main class='row' style="height:70%">
+        <main class='row'>
             @yield('content')
         </main>
 
-        <footer class="bg-dark text-white row d-flex  justify-content-between"style="height:10%" >     
+        <footer class="bg-dark text-white row d-flex  justify-content-between">     
             <p class='col-5 m-3 p-3'>FUNDACIÓN DIOCESANAS - JESÚS OBRERO FUNDAZIOA  © EGIBIDE</p>   
             <p class='col-5 m-3 p-3'>Diseñado por Aitor,Rafa,Alaitz :S | Desarrollado por Aitor,Rafa,Alaitz :D </p>       
         </footer>

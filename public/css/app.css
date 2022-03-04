@@ -4526,9 +4526,6 @@ textarea.form-control-lg {
   color: rgba(0, 0, 0, 0.9);
 }
 
-.navbar-dark {
-  height: 50% !important;
-}
 .navbar-dark .navbar-brand {
   color: #fff;
 }
@@ -11390,4 +11387,12 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+header {
+  position: absolute !important;
+  top: 0 !important;
+}
+
+footer {
+  bottom: 0 !important;
 }
