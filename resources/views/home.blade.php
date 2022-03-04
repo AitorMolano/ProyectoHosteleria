@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <title>HOME</title>
-</head>
-<body class="bg-ligth">
-    <div class="container-fluid">
-        <div class="row">
-            @foreach ($productos as $producto) 
+@extends('layouts.layout')
+@section('content')
+@foreach ($productos as $producto) 
                <div class="col-xl-3 col-md-4 col-6 mt-2">
                     <div class="card h-100">
                         <!-- Product image-->
@@ -37,7 +25,4 @@
                     </div>
                </div>
             @endforeach
-        </div>
-    </div>
-</body>
-</html>
+ @endsection

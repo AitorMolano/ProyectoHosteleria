@@ -6,3 +6,22 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+main{
+    min-height: calc(100vh - 142.06px);
+    margin-top:2px;
+}
+
+.logo{
+    height: 200px;
+}
+  
+.logo img{
+    height: 100%;
+}
+
+footer{
+    position:absolute ;
+    bottom: 0 ;
+    width:100%;
+}
