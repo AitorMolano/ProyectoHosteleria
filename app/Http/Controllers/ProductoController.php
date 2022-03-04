@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductoController extends Controller
 {
@@ -14,10 +15,11 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos = Producto::all();
-        return view('home', [
-            'productos' => $productos
-        ]);
+        // $productos = Producto::all();
+        // return view('productos', [
+        //     'productos' => $productos
+        // ]);
+        return view('productos');
     }
 
     /**
@@ -58,12 +60,19 @@ class ProductoController extends Controller
 
         $producto->save();
 
+<<<<<<< HEAD
         echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
         
         $productos = Producto::all();
         return view('home', [
             'productos' => $productos
         ]);
+=======
+       // echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
+
+        $productos = Producto::all();
+        return redirect('producto/create');
+>>>>>>> createProduct
     }
 
     /**

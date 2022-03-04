@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hosteleria</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body class='bg-ligth' style="height: 100vh;">
     <div  class="container-fluid" style="height:100%"> 
