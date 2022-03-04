@@ -18,7 +18,7 @@ class ProductoSeeder extends Seeder
     {
         $faker = \Faker\Factory::create('ES_es');
 
-        for ($i=0; $i < 100; $i++) { 
+        for ($i=0; $i < 120; $i++) { 
             DB::table('productos')->insert([
                 'nombre' => $faker->unique()->name(18),
                 'precio' => $faker->randomNumber(2, 0, 50),

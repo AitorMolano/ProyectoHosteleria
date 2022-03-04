@@ -36,12 +36,15 @@ function primeros12(){
                             <!-- Product name-->
                             <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`</h5>
                             <!-- Product price-->
-                            {{`+todos_productos[x]['precio']+`}} &euro;
+                            `+todos_productos[x]['precio']+` &euro;
                         </div>
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver M&aacute;s</a></div>
+                        <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
                     </div>
                 </div>
             </div>
@@ -50,7 +53,8 @@ function primeros12(){
 }
 
 function mostrarMas(){
-    pagina = pagina++;
+    console.log(pagina)
+    pagina ++;
 
     let div_productos = document.getElementsByClassName('productos')[0];
     for(let x =pagina - 1 ;x< pagina * 12;x++){
@@ -65,7 +69,7 @@ function mostrarMas(){
                             <!-- Product name-->
                             <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`</h5>
                             <!-- Product price-->
-                            {{`+todos_productos[x]['precio']+`}} &euro;
+                            `+todos_productos[x]['precio']+` &euro;
                         </div>
                     </div>
                     <!-- Product actions-->

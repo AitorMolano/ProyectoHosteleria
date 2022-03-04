@@ -71,6 +71,7 @@ class ProductoController extends Controller
     public function show($id)
     {
         $producto = Producto::find($id);
+        
         return view('detalleProducto', [
             'producto' => $producto
         ]);

@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
                     <div class="col-lg-5">
-                        <div class="white-box"><img src="{{ $producto->foto }}" class="img-responsive"></div>
+                        <div class="white-box"><img src="{{asset($producto->foto)}}" class="img-responsive"></div>
                     </div>
                     <div class="col-lg-7">
                         <h3 class="card-title">{{ $producto -> nombre }}</h3>
@@ -23,7 +23,7 @@
                                 <i class="fa fa-shopping-cart"></i>
                             </button>
                             <button class="btn btn-primary btn-rounded">Comprar</button>
-                            <a class="btn btn-outline-dark mt-auto" href="{{ route('productos') }}">Volver</a>
+                            <a class="btn btn-outline-dark mt-auto" href="{{ route('home') }}">Volver</a>
                             <a class="btn btn-outline-dark mt-auto" href="{{ route('createProduct') }}">Crear</a>
                     </div>
         </div>
