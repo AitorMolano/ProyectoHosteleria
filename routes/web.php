@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
@@ -23,6 +24,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', [ProductoController::class, 'index'])->name('home');
+Route::get('/api/productos', [ApiController::class, 'productos'])->name('api-productos');
 Route::post('/prueba', [ProductoController::class, 'prueba'])->name('prueba');
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');

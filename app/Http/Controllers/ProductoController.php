@@ -15,8 +15,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos = Producto::all();
-        return view('home')->with('productos',$productos);
+        return view('home');
     }
 
     /**
@@ -49,7 +48,7 @@ class ProductoController extends Controller
             $foto_nueva  = $foto->getClientOriginalName();
             $ruta = public_path('fotos/'.$foto_nueva);
             copy($foto,$ruta);
-            $producto->foto = $foto_nueva;
+            $producto->foto = 'fotos/'.$foto_nueva;
         }
         else{
             echo '<script type="text/javascript">alert("No entra en foto");</script>';
