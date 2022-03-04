@@ -54,13 +54,16 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <a class="dropdown-item" href="#">Carrito</a>
-                                    <a class="dropdown-item" href="#">Perfil</a>
-
+                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
+                            </li>
+                            <li>
+                                <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="{{route('verCarrito')}}" data-original-title="Add to cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
                             </li>
                         @endguest
                     </ul>

@@ -16,10 +16,8 @@ use App\Http\Controllers\ProductoController;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});
-*/
+Route::get('/', [ProductoController::class, 'index']);
+
 Route::get('productos/{id}', [ProductoController::class, 'show'])->name('detalleProd');
 
 Route::get('producto/create', [ProductoController::class, 'create'])->name('createProduct');
