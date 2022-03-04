@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('productos/{id}', [ProductoController::class, 'show'])->name('detalleProd');
+
+
+
 Auth::routes();
 
 //Route::get('/', [ProductoController::class, 'index'])->name('productos');
