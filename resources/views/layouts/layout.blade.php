@@ -77,7 +77,7 @@
             @yield('content')
         </main>
 
-        <footer class="bg-dark text-white row d-flex  justify-content-between">     
+        <footer class="bg-dark text-white row d-flex mt-2 justify-content-between">     
             <p class='col-5 m-3 p-3'>FUNDACIÓN DIOCESANAS - JESÚS OBRERO FUNDAZIOA  © EGIBIDE</p>   
             <p class='col-5 m-3 p-3'>Diseñado por Aitor,Rafa,Alaitz :S | Desarrollado por Aitor,Rafa,Alaitz :D </p>       
         </footer>

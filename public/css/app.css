@@ -11300,7 +11300,10 @@ main {
 }
 
 footer {
+<<<<<<< HEAD
   position: absolute;
+=======
+>>>>>>> f7fa019662f8eea774c67279dba800688d848f8f
   bottom: 0;
   width: 100%;
 }
