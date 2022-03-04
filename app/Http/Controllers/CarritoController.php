@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Carrito;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CarritoController extends Controller
 {
@@ -14,7 +15,15 @@ class CarritoController extends Controller
      */
     public function index()
     {
-        //
+        if(Auth::user())
+        {
+            echo '<script type="text/javascript">alert("Has iniciado sesion");</script>';
+            return view('carrito');
+        }
+        else{
+            // no se ejecuta por el redirect :: echo '<script type="text/javascript">alert("Inicia sesion primero");</script>';
+            return redirect('login');
+        }
     }
 
     /**
@@ -46,7 +55,7 @@ class CarritoController extends Controller
      */
     public function show(Carrito $carrito)
     {
-        //
+        return view('showCarrito');
     }
 
     /**
