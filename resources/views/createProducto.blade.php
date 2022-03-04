@@ -48,7 +48,7 @@
     <div class="row mt-3">
       <div class="col-md-4">
         <button type="submit" class="btn btn-primary ">Crear producto</button>
-        <a class="btn btn-outline-dark mt-auto" href="{{ route('productos') }}">Volver</a>
+        <a class="btn btn-outline-dark mt-auto" href="{{ route('home') }}">Volver</a>
       </div>
     </div>
   </form>
