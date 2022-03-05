@@ -29,7 +29,7 @@ function primeros12(){
             <div class="col-xl-3 col-md-4 col-6 mt-2">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src= "`+todos_productos[x]['foto']+`" alt="..." />
+                    <img class="card-img-top" src= "`+todos_productos[x]['foto']+`" alt="..." style="height: 300px; width:300px;"  />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -53,11 +53,11 @@ function primeros12(){
 }
 
 function mostrarMas(){
-    console.log(pagina)
-    pagina ++;
+    pagina++;
 
     let div_productos = document.getElementsByClassName('productos')[0];
-    for(let x =pagina - 1 ;x< pagina * 12;x++){
+
+    for(let x =(pagina - 1) * 12 ;x< x + 12 && x<todos_productos.length;x++){
         div_productos.innerHTML = div_productos.innerHTML + `
             <div class="col-xl-3 col-md-4 col-6 mt-2">
                 <div class="card h-100">
@@ -74,11 +74,19 @@ function mostrarMas(){
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver M&aacute;s</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+todos_productos[x]['id']+`">Ver M&aacute;s</a></div>
                     </div>
                 </div>
             </div>
         `;
+        
     }
-
+    if((((pagina -1) * 12) + 12) == todos_productos.length){
+        let btn = document.getElementsByClassName('boton')[0];
+        btn.innerHTML = '';
+        let msg = document.createElement('h5');
+        msg.innerHTML= '<h5>No hay más productos</h5>';
+        msg.className='d-flex justify-content-center align-items-center mt-2';
+        btn.append(msg);
+    }
 }

@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('precio');
             $table->string('foto');
             $table->text('descripcion');
-            $table->string('foto');
             $table->boolean('disponible');
             $table->integer('cantidadMinima');
             $table->timestamps();
