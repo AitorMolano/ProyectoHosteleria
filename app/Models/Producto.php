@@ -18,4 +18,7 @@ class Producto extends Model
         "cantidadMinima",
     ];
 
+    public function pedidos(){
+        return $this->hasMany('App\Pedido');
+    }
 }

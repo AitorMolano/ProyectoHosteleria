@@ -19,6 +19,7 @@
                                 <i class="fa fa-shopping-cart"></i>
                             </button>
                             <a class="btn btn-outline-dark mt-auto" href="{{ route('home') }}">Volver</a>
+                            <a class="btn btn-outline-dark mt-auto" href="{{ route('editProducto', $producto->id) }}">Editar</a>
                     </div>
         </div>
     </div>

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pedido extends Model
 {
     use HasFactory;
+
+    public function usuario(){
+        return $this->belongsTo('App\User');
+    }
+
+
 }

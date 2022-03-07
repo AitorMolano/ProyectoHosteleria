@@ -34,6 +34,12 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::post('producto/store', [ProductoController::class, 'store'])->name('storeProduct');
 
+Route::delete('producto/{id}', [ProductoController::class, 'destroy'])->name('borrarProducto');
+
+Route::get('producto/{id}/edit', [ProductoController::class, 'edit'])->name('editProducto');
+
+Route::put('editarProducto/{id}', [ProductoController::class, 'update'])->name('actualizar');
+
 Route::get('carrito/index', [CarritoController::class, 'index'])->name('indexCarrito');
 
 Route::get('carrito/show', [CarritoController::class, 'show'])->name('showCarrito');
