@@ -27,6 +27,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/croquetas_hongos.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 1,
         ]);
 
         DB::table('productos')->insert([
@@ -36,6 +37,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/croquetas.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 1,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Croquetas de txipiron',
@@ -44,6 +46,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/croquetas-de-chipiron.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 1,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Tigres',
@@ -52,6 +55,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/tigre.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 12,
+            'categoria' => 1,
         ]);
 
         //ENTRANTES
@@ -63,6 +67,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/escalibada.png',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 2,
         ]);
 
         DB::table('productos')->insert([
@@ -72,6 +77,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/canelones.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 2,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Pencas de acelga rellenas de paleta de Basatxerri',
@@ -80,6 +86,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/pencas.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 2,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Piquillos rellenos de merluza y gambas',
@@ -88,6 +95,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/piquillos.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 2,
         ]);
 
         //PESCADOS
@@ -99,6 +107,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/bacalao.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 3,
         ]);
 
         DB::table('productos')->insert([
@@ -108,6 +117,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/bacalao-langostino.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 3,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Chipirones en su tinta',
@@ -116,6 +126,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/chipirones.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 3,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Kokotxas de bacalao con gulas',
@@ -124,6 +135,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/kokotxas.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 3,
         ]);
 
 
@@ -136,6 +148,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/albondigas.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 4,
         ]);
 
         DB::table('productos')->insert([
@@ -145,6 +158,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/carrilleras.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 4,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Lengua rellena de Idiazabal y salsa agridulce',
@@ -153,6 +167,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/lengua.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 4,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Callos y morros de ternera en salsa bizkaina',
@@ -161,6 +176,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/callos.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
+            'categoria' => 4,
         ]);
 
         //SEMIFRIOS
@@ -172,6 +188,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/delicia.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 5,
         ]);
 
         DB::table('productos')->insert([
@@ -181,6 +198,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/mousse.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 5,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Charlota de crema',
@@ -189,6 +207,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/charlota.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 5,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Bavarroi de frutas',
@@ -197,6 +216,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/bavarroi.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 5,
         ]);
 
 
@@ -209,6 +229,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/brazo.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 6,
         ]);
 
         DB::table('productos')->insert([
@@ -218,6 +239,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/brazo-yema.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 6,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Brazo de gitano de nata',
@@ -226,6 +248,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/brazo-nata.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 6,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Brazo de gitano de crema',
@@ -234,6 +257,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/brazo-crema.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 6,
         ]);
 
         //TARTAS DE HOJALDRE
@@ -245,6 +269,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/milhojas.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 7,
         ]);
 
         DB::table('productos')->insert([
@@ -254,6 +279,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/milhojas-crema.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 7,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Tarta Gasteiz',
@@ -262,6 +288,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/gasteiz.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 7,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Banda de manzana',
@@ -270,6 +297,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/banda.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 7,
         ]);
 
         //TARTAS VARIADAS
@@ -281,6 +309,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/tarta-manzana.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 8,
         ]);
 
         DB::table('productos')->insert([
@@ -290,6 +319,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/tarta-fruta.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 8,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Pastel vasco',
@@ -298,6 +328,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/pastel-vasco.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 8,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Tarta de queso cocida',
@@ -306,6 +337,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/tarta-queso.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 8,
         ]);
 
         //VARIEDADES
@@ -317,6 +349,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/rosquillas.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 6,
+            'categoria' => 9,
         ]);
 
         DB::table('productos')->insert([
@@ -326,6 +359,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/pastas.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
+            'categoria' => 9,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Galletas cookies',
@@ -334,6 +368,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/cookie.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 6,
+            'categoria' => 9,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Polvorones',
@@ -342,6 +377,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/polvoron.jfif',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 10,
+            'categoria' => 9,
         ]);
 
 

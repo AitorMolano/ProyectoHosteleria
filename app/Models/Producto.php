@@ -16,6 +16,10 @@ class Producto extends Model
         "foto",
         "disponible",
         "cantidadMinima",
+        "categoria",
     ];
 
+    public function categoria(){
+        return $this->belongsTo(Categoria::class);
+    }
 }

@@ -23,6 +23,8 @@ return new class extends Migration
             $table->text('descripcion');
             $table->boolean('disponible');
             $table->integer('cantidadMinima');
+            $table->unsignedBigInteger('categoria');
+            $table->foreign('categoria')->references('id')->on('categorias');
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();
