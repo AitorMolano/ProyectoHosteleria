@@ -29,7 +29,9 @@ function primeros12(){
             <div class="col-xl-3 col-md-4 col-6 mt-2">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src= "`+todos_productos[x]['foto']+`" alt="..." style="height: 300px; width:300px;"  />
+                    <div class="d-flex justify-content-center align-items-center mt-3">
+                        <img class="card-img-top img-fluid" src= "`+todos_productos[x]['foto']+`" alt="..." style="height: 300px; width:300px;"/>
+                    </div>
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -54,15 +56,19 @@ function primeros12(){
 
 function mostrarMas(){
     pagina++;
+    let valor_x = (pagina -1)*12;
+    let valor_limite = valor_x +12;
 
     let div_productos = document.getElementsByClassName('productos')[0];
 
-    for(let x =(pagina - 1) * 12 ;x< x + 12 && x<todos_productos.length;x++){
+    for(let x =valor_x ;x< valor_limite && x<todos_productos.length;x++){
         div_productos.innerHTML = div_productos.innerHTML + `
             <div class="col-xl-3 col-md-4 col-6 mt-2">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src= "`+todos_productos[x]['foto']+`" alt="..." />
+                    <div class="d-flex justify-content-center align-items-center mt-3">
+                        <img class="card-img-top img-fluid " src= "`+todos_productos[x]['foto']+`" alt="..."style="height: 300px; width:300px;" />
+                    </div>
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">

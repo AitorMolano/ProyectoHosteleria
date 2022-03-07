@@ -96,7 +96,7 @@ class ProductoSeeder extends Seeder
             'nombre' => 'Bacalao a la bizkaina',
             'precio' => 10.20,
             'descripcion' => 'Bacalao a la bizkaina',
-            'foto' => 'img/croquetas.jpg',
+            'foto' => 'img/bacalao.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
         ]);
@@ -105,7 +105,7 @@ class ProductoSeeder extends Seeder
             'nombre' => 'Bacalao ajoarriero con langostinos',
             'precio' => 8.60,
             'descripcion' => 'Bacalao ajoarriero con langostinos',
-            'foto' => 'img/bacalao.jpg',
+            'foto' => 'img/bacalao-langostino.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
         ]);
@@ -206,7 +206,7 @@ class ProductoSeeder extends Seeder
             'nombre' => 'Brazo de gitano de chocolate',
             'precio' => 15,
             'descripcion' => 'Brazo de gitano de chocolate',
-            'foto' => 'img/croquetas.jpg',
+            'foto' => 'img/brazo.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
         ]);
@@ -215,7 +215,7 @@ class ProductoSeeder extends Seeder
             'nombre' => 'Brazo de gitano de yema',
             'precio' => 15,
             'descripcion' => 'Brazo de gitano de yema',
-            'foto' => 'img/brazo.jpg',
+            'foto' => 'img/brazo-yema.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 1,
         ]);
