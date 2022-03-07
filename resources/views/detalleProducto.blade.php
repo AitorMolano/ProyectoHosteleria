@@ -20,13 +20,15 @@
                                 <i class="fa fa-shopping-cart"></i>
                             </button>
                             <a class="btn btn-outline-dark mt-auto" href="{{ route('home') }}">Volver</a>
-                            @if ((Auth::user()->rol)==1)
-                            <a class="btn btn-outline-dark mt-auto" href="{{ route('editProducto', $producto->id) }}">Editar</a>
-                            <form method="POST" action="{{ route('borrarProducto', $producto->id) }}">
-                                @method('DELETE')
-                                @csrf
-                                <input type="submit" value="Borrar" class="btn btn-danger btn-outline-dark mt-auto">
-                            </form>  
+                            @if (!Auth::user()==null)
+                                @if ((Auth::user()->rol)==1)
+                                <a class="btn btn-outline-dark mt-auto" href="{{ route('editProducto', $producto->id) }}">Editar</a>
+                                <form method="POST" action="{{ route('borrarProducto', $producto->id) }}">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input type="submit" value="Borrar" class="btn btn-danger btn-outline-dark mt-auto">
+                                </form>  
+                                @endif
                             @endif
                         </div>
         </div>
