@@ -25,7 +25,7 @@
     <div class="row">
       <div class="form-group col-4">
         <label for="descripcion">Descripcion</label>
-        <textarea id="descripcion" cols="50" rows="10" name="descripcion">{{$producto->descripcion}}"</textarea>
+        <textarea id="descripcion" cols="50" rows="10" name="descripcion">{{$producto->descripcion}}</textarea>
       </div>
     </div>
     <div class="row">
@@ -39,7 +39,7 @@
                 <label class="form-check-label" for="radioD">Disponible</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="radioDis" id="radioNoD" value="0">
+                <input class="form-check-input" type="radio" name="radioDis" value="0" id="radioNoD">
                 <label class="form-check-label" for="radioNoD" >No disponible</label>
             </div>
       </div>
@@ -54,7 +54,7 @@
     <div class="row">
       <div class="form-group col-md-4">
         <label for="foto">Imagen</label>
-        <input type="file" class="form-control" id="foto" name="foto" value="{{asset($producto->foto)}}">
+        <input type="file" class="form-control" id="foto" name="foto" value="">
       </div>
     </div>
     <div class="row mt-3">

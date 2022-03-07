@@ -36,7 +36,6 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
         $producto = new Producto;
         $producto->nombre = request('nombre');
         $producto->precio = request('precio');
@@ -57,7 +56,7 @@ class ProductoController extends Controller
 
         $producto->save();
 
-       // echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
+       echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
 
         $productos = Producto::all();
         return redirect('producto/create');
@@ -98,7 +97,7 @@ class ProductoController extends Controller
         $producto->nombre = request('nombre');
         $producto->precio = request('precio');
         $producto->descripcion = request('descripcion');
-        $producto->disponible = request('disponible');
+        $producto->disponible = request("radioDis");
         $producto->cantidadMinima = request('cantidadMinima');
 
         if($request->hasFile('foto')){
@@ -108,17 +107,22 @@ class ProductoController extends Controller
             copy($foto,$ruta);
             $producto->foto = 'fotos/'.$foto_nueva;
         }
-        else{
-            dd($request);
-            echo '<script type="text/javascript">alert("No entra en foto");</script>';
-        }
 
         $producto->save();
+
+        echo '<script type="text/javascript">alert("Producto editado correctamente");</script>';
+
+        $productos = Producto::all();
+        return redirect('home');
     }
 
     public function destroy($id)
     {
         $producto = Producto::find($id);
         $producto->delete();
+
+        echo '<script type="text/javascript">alert("Producto eliminado correctamente");</script>';
+
+        return redirect('home');
     }
 }

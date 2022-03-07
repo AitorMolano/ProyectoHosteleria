@@ -44,8 +44,8 @@ function primeros12(){
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+todos_productos[x]['id']+`">Ver M&aacute;s</a></div>
                     </div>
                     <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="#" data-original-title="Add to cart">
-                        <i class="fa fa-shopping-cart"></i>
-                    </a>
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
                 </div>
             </div>
         `;

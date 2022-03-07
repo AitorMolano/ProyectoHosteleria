@@ -20,10 +20,10 @@ Route::get('producto/create', [ProductoController::class, 'create'])->name('crea
 
 Route::get('producto/{id}', [ProductoController::class, 'show'])->name('detalleProd');
 
-
-
 Auth::routes();
+
 Route::get('/home', [ProductoController::class, 'index'])->name('home');
+
 Route::get('/', [ProductoController::class, 'index'])->name('home');
 
 Route::get('/api/productos', [ApiController::class, 'productos'])->name('api-productos');

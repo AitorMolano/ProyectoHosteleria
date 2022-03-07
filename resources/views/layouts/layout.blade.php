@@ -50,7 +50,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('createProduct') }}">Crear</a>    
+                                @if ((Auth::user()->rol)==1)
+                                <a class="dropdown-item" href="{{ route('createProduct') }}">Crear</a>
+                                @endif    
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

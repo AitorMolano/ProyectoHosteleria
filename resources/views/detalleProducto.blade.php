@@ -14,13 +14,21 @@
                             ?>
                             <button class="btn btn-success btn-rounded" id="btnDisponible" style="display:none;">Disponible</button>
                             <button class="btn btn-danger btn-rounded" id="btnNoDisponible" style="display:none;">No disponible</button>
+                            
                             <h2 class="mt-5">{{ $producto->precio }} €</h2>
                             <button class="btn btn-dark btn-rounded mr-1" id="anadir" data-toggle="tooltip" title="" data-original-title="Add to cart">
                                 <i class="fa fa-shopping-cart"></i>
                             </button>
                             <a class="btn btn-outline-dark mt-auto" href="{{ route('home') }}">Volver</a>
+                            @if ((Auth::user()->rol)==1)
                             <a class="btn btn-outline-dark mt-auto" href="{{ route('editProducto', $producto->id) }}">Editar</a>
-                    </div>
+                            <form method="POST" action="{{ route('borrarProducto', $producto->id) }}">
+                                @method('DELETE')
+                                @csrf
+                                <input type="submit" value="Borrar" class="btn btn-danger btn-outline-dark mt-auto">
+                            </form>  
+                            @endif
+                        </div>
         </div>
     </div>
     <script type="text/javascript">
