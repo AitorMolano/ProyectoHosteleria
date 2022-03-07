@@ -1,4 +1,4 @@
-/node_modules
+/node_modules/*
 !/node_modules/bootstrap
 /public/hot
 /public/storage
