@@ -17,9 +17,17 @@
 
         <input type="text" name="nombre" class="mx-2 rounded-pill bg-purple text-white px-2 " autocomplete="off" aria-selected="false" id="nombre"/>
     </form>
-    <div class="productos row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-       
-    </div>
+
+    @guest
+        <div class="productos row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"></div>  
+    @else
+        @if (Auth::user()->rol == 0 )
+            <div class="productos row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"></div>  
+        @else
+            <h2>Admin</h2>
+        @endif
+    @endguest
+
     <div class="row mt-2 boton">
         <button type="button" class=" col-12 btn btn-outline-purple" onclick="mostrarMas()">+</button>
     </div>

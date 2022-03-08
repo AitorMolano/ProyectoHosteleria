@@ -28,5 +28,16 @@ class ClienteSeeder extends Seeder
                 'remember_token' => $faker->text(10),
             ]);
         }
+
+        DB::table('users')->insert([
+            'name' => 'cliente',
+            'email' => 'cliente@gmail.com',
+            'email_verified_at' => now(),
+            'password' => '12345Abcde',
+            'telefono' => $faker-> phoneNumber(),
+            'rol' => $faker->boolean(false),
+            'direccion' => $faker->address(),
+            'remember_token' => $faker->text(10),
+        ]);
     }
 }
