@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Pedido;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class PedidoController extends Controller
 {
@@ -15,8 +14,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::where('id_cliente','like',Auth::user()->id);
-        return view('pedidos')->with('pedidos',$pedidos);
+        //
     }
 
     /**

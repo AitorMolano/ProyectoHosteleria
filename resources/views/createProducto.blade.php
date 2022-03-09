@@ -28,6 +28,12 @@
       </div>
     </div>
     <div class="row">
+      <div class="form-group col-4">
+        <label for="disponible">Disponible</label>
+        <input type="text" class="form-control" id="disponible" name="disponible" placeholder="">
+      </div>
+    </div>
+    <div class="row">
       <div class="form-group col-md-4">
         <label for="cantidadMinima">Cantidad Minima</label>
         <input type="text" class="form-control" id="cantidadMinima" name="cantidadMinima" placeholder="">

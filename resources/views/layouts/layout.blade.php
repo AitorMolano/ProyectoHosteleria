@@ -50,10 +50,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                @if ((Auth::user()->rol)==1)
-                                <a class="dropdown-item" href="{{ route('createProduct') }}">Crear</a>
-                                @endif    
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a class="dropdown-item" href="{{ route('createProduct') }}">Crear</a>    
+                                <a id="logout" class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -64,18 +62,26 @@
                                 </div>
                             </li>
 
+                         
+                        @endguest
                             <li>
-                                <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="#" data-original-title="Add to cart">
+                                <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="{{ route('showCarrito') }}" data-original-title="Add to cart">
                                     <i class="fa fa-shopping-cart"></i>
                                 </a>
                             </li>
-                        @endguest
                     </ul>
                 </div>
             </div>
         </nav>
 
-
+        <script>
+            document.getElementById("logout").addEventListener("click", function(e) {
+            var carrito ="[]";
+            carrito = JSON.parse(carrito);
+            sessionStorage.setItem("carrito", JSON.stringify(carrito));
+            alert("Carrito vaciado");
+            });
+        </script>
         </header>
         <main class='row'>
             <div class='col-12 d-flex justify-content-center align-items-center'>

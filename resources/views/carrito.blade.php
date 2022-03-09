@@ -2,11 +2,62 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+   
     <h2>Carrito</h2>
-        <p>Esta?</p>
+    <table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Imagen</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        
+    </tr>
+ <?php 
+ $total = 0;
+    $numeros =  $_COOKIE["carrito"];
+    $elementos = explode(",", $numeros);
+    sort($elementos);
+    $elementos2 = array_unique($elementos);
+    foreach($elementos2 as $elemento2){
+        $cantidad =0;
+        foreach($elementos as $elemento){
+            if( $elemento == $elemento2){
+                $cantidad++;
+            }
+        }
+        foreach($productos as $producto){
+            if ($elemento2 == $producto->id)
+                $elProducto = $producto;  
+        }
+?>
 
+    <tr>
+        <td>{{$elemento2}}</td>
+        <td>{{$elProducto->nombre}}</td>
+        <td><img src="{{ asset($producto->foto) }}" class="img-fluid"></td>
+        <td>{{$cantidad}}</td>
+        <?php
+        $preciototal = $elProducto->precio * $cantidad;
+        $total += $preciototal;
+        ?>
+        <td>{{$preciototal}}</td>
+    </tr>
+
+        
+
+<?php
+    }
+?>
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{$total}}</td>
+    </tr>
+</table>
     
-    </div>
 </div>
 @endsection

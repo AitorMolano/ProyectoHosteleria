@@ -16,13 +16,6 @@ class Producto extends Model
         "foto",
         "disponible",
         "cantidadMinima",
-        "categoria",
     ];
 
-    public function pedidos(){
-        return $this->hasMany('App\Pedido');
-    }
-    public function categoria(){
-        return $this->belongsTo(Categoria::class);
-    }
 }

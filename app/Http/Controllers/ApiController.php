@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 class ApiController extends Controller
 {
     public function productos(){
-        $productos = Producto::where('disponible','like',1)->get()->toArray();
-        $productos = array_values($productos);
-        
+        $productos = Producto::all();
 
         return response()->json([
             'ok' => true,

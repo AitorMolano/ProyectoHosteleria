@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CarritoController;
-use App\Http\Controllers\PedidoController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +20,10 @@ Route::get('producto/create', [ProductoController::class, 'create'])->name('crea
 
 Route::get('producto/{id}', [ProductoController::class, 'show'])->name('detalleProd');
 
+
+
 Auth::routes();
-
 Route::get('/home', [ProductoController::class, 'index'])->name('home');
-
 Route::get('/', [ProductoController::class, 'index'])->name('home');
 
 Route::get('/api/productos', [ApiController::class, 'productos'])->name('api-productos');
@@ -36,14 +34,7 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::post('producto/store', [ProductoController::class, 'store'])->name('storeProduct');
 
-Route::delete('producto/{id}', [ProductoController::class, 'destroy'])->name('borrarProducto');
-
-Route::get('producto/{id}/edit', [ProductoController::class, 'edit'])->name('editProducto');
-
-Route::put('editarProducto/{id}', [ProductoController::class, 'update'])->name('actualizar');
-
 Route::get('carrito/index', [CarritoController::class, 'index'])->name('indexCarrito');
 
 Route::get('carrito/show', [CarritoController::class, 'show'])->name('showCarrito');
 
-Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
