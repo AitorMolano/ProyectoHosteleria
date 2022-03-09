@@ -17,4 +17,12 @@ class ApiController extends Controller
             'productos' => $productos
         ],200);
     }
+
+    public function productosAdmin(){
+        $productos_admin = Producto::all();
+        return response()->json([
+            'ok' => true,
+            'productos' => $productos_admin
+        ]) ;
+    }
 }
