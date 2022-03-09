@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="m-0 row d-flex justify-content-center align-items-center">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" style="max-width: 50%;">
                         <img src="{{ asset($producto->foto) }}" class="img-fluid">
                     </div>
                     <div class="col-lg-4">

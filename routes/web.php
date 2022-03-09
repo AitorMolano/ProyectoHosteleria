@@ -46,4 +46,6 @@ Route::get('carrito/index', [CarritoController::class, 'index'])->name('indexCar
 
 Route::get('carrito/show', [CarritoController::class, 'show'])->name('showCarrito');
 
+Route::post('carrito/store', [CarritoController::class, 'store'])->name('storeCarrito');
+
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');

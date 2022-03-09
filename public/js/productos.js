@@ -245,9 +245,9 @@ function mostrarProductosFiltrados(productos_filtrados){
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+productos_filtrados[x]['id']+`">Ver M&aacute;s</a></div>
                 </div>
-                <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="#" data-original-title="Add to cart">
-                        <i class="fa fa-shopping-cart"></i>
-                    </a>
+                <p class="btn btn-light btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+productos_filtrados[x]['id']+`" data-original-title="Add to cart">
+                <i class="fa fa-shopping-cart"></i>
+                    </p>
             </div>
         </div>
     `;
