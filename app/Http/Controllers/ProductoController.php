@@ -40,7 +40,7 @@ class ProductoController extends Controller
         $producto->nombre = request('nombre');
         $producto->precio = request('precio');
         $producto->descripcion = request('descripcion');
-        $producto->disponible = request('disponible');
+        $producto->disponible = 1;
         $producto->cantidadMinima = request('cantidadMinima');
 
         if($request->hasFile('foto')){
@@ -56,10 +56,10 @@ class ProductoController extends Controller
 
         $producto->save();
 
-       // echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
+       echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
 
         $productos = Producto::all();
-        return redirect('producto/create');
+        return redirect('/');
     }
 
     /**
@@ -91,26 +91,39 @@ class ProductoController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Producto  $producto
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, $id)
     {
-        //
+        
+        $producto = Producto::find($id);
+        $producto->nombre = request('nombre');
+        $producto->precio = request('precio');
+        $producto->descripcion = request('descripcion');
+        $producto->disponible = request("radioDis");
+        $producto->cantidadMinima = request('cantidadMinima');
+
+        if($request->hasFile('foto')){
+            $foto = $request->file('foto');
+            $foto_nueva  = $foto->getClientOriginalName();
+            $ruta = public_path('fotos/'.$foto_nueva);
+            copy($foto,$ruta);
+            $producto->foto = 'fotos/'.$foto_nueva;
+        }
+
+        $producto->save();
+
+        echo '<script type="text/javascript">alert("Producto editado correctamente");</script>';
+
+        $productos = Producto::all();
+        return redirect('home');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Producto  $producto
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Producto $producto)
+    public function destroy($id)
     {
-        //
+        $producto = Producto::find($id);
+        $producto->delete();
+
+        echo '<script type="text/javascript">alert("Producto eliminado correctamente");</script>';
+
+        return redirect('home');
     }
 }
