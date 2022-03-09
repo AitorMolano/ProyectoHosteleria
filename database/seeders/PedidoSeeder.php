@@ -25,5 +25,10 @@ class PedidoSeeder extends Seeder
             'suma_precio'=>31,
             'estado'=>'recibido'
         ]);
+        DB::table('pedidos')->insert([
+            'id_cliente' =>7,
+            'suma_precio'=>31,
+            'estado'=>'en proceso'
+        ]);
     }
 }

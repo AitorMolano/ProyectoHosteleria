@@ -72,3 +72,4 @@ PEDIDO
  */
 
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
+Route::get('/pedidos-admin', [PedidoController::class, 'indexAdmin'])->name('pedidos-admin');

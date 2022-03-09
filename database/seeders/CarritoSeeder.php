@@ -36,6 +36,11 @@ class CarritoSeeder extends Seeder
             'id_producto'=>32,
             'id_pedido'=>2,
         ]);
+
+        DB::table('carritos')->insert([
+            'id_producto'=>32,
+            'id_pedido'=>3,
+        ]);
         
     }
 }

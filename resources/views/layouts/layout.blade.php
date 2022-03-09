@@ -52,7 +52,7 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 @if ((Auth::user()->rol)==1)
                                 <a class="dropdown-item" href="{{ route('createProduct') }}">Crear</a>
-                                <a class="dropdown-item" href="#">Ver todos los pedidos</a>
+                                <a class="dropdown-item" href="{{route('pedidos-admin')}}">Ver todos los pedidos</a>
                                 @else
                                 <a class="dropdown-item" href="{{ route('pedidos') }}">Mis pedidos</a>
                                 @endif    

@@ -34,6 +34,22 @@ class PedidoController extends Controller
         return view('pedidos')->with('carrito_total',$carrito_total);
     }
 
+    public function indexAdmin(){
+        $carrito_total=[];
+        $pedidos = Pedido::all();
+        foreach($pedidos as $pedido){
+            $productos=[];
+            $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
+            foreach($carrito as $producto){
+                $nombre_producto = Producto::find($producto['id'])['nombre'];
+                array_push($productos,$nombre_producto);
+            }
+            array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado']]);
+        }
+        
+        return view('pedidos-admin')->with('carrito_total',$carrito_total);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
