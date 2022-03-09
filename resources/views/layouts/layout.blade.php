@@ -53,7 +53,7 @@
                                 @if ((Auth::user()->rol)==1)
                                 <a class="dropdown-item" href="{{ route('createProduct') }}">Crear</a>
                                 @endif    
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a id="logout" class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -63,20 +63,28 @@
                                     </form>
                                 </div>
                             </li>
-
-                            <li>
-                                <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="#" data-original-title="Add to cart">
+                        @endguest
+                        <li>
+                                <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="{{ route('showCarrito') }}" data-original-title="Add to cart">
                                     <i class="fa fa-shopping-cart"></i>
                                 </a>
                             </li>
-                        @endguest
                     </ul>
                 </div>
             </div>
         </nav>
 
-
+            <script>
+                document.getElementById("logout").addEventListener("click", function(e) {
+                var carrito ="[]";
+                carrito = JSON.parse(carrito);
+                sessionStorage.setItem("carrito", JSON.stringify(carrito));
+                document.cookie = "carrito =; max -age =0";
+                alert("Carrito vaciado");
+                });
+            </script>
         </header>
+
         <main class='row'>
             <div class='col-12 d-flex justify-content-center align-items-center'>
                 <img src="{{ asset('img/logo.png') }}" class="img-fluid h-50"/>

@@ -1,12 +1,19 @@
 var todos_productos = [];
 var productos_filtrados = [];
 var pagina = 1;
+var carrito="";
  
 $(document).ready(function(){
     obtenerDatos();
     document.getElementById('categorias').addEventListener('change',filtroCategoria);
     document.getElementById('nombre').addEventListener('keyup',mostrarLetras);
-
+    var lasCookies = document.cookie;
+    arrayCookies = lasCookies.split(" ");
+        for (i=0; i<arrayCookies.length ; i++){
+            if (arrayCookies[i].charAt(0)=="c")
+               carrito = arrayCookies[i];
+               carrito2= carrito.slice(8,-1);
+    }
 });
 
 function obtenerDatos(){
@@ -49,12 +56,23 @@ function primeros12(){
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+todos_productos[x]['id']+`">Ver M&aacute;s</a></div>
                     </div>
-                    <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="#" data-original-title="Add to cart">
+                    <p class="btn btn-light btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+todos_productos[x]['id']+`" data-original-title="Add to cart">
                             <i class="fa fa-shopping-cart"></i>
-                        </a>
+                        </p>
                 </div>
             </div>
         `;
+    }
+    let carritos = document.getElementsByClassName('carrito');
+    for(i=0; i<carritos.length; i++) {
+        carritos[i].addEventListener('click', function(e) {
+            if(carrito2 =="")
+                carrito2 += this.id;
+            else
+                carrito2 +=","+ this.id;
+
+            document.cookie = "carrito="+carrito2 +"; path=/";
+        });
     }
 }
 
@@ -85,9 +103,9 @@ function mostrarMas(){
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+todos_productos[x]['id']+`">Ver M&aacute;s</a></div>
                     </div>
-                    <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="#" data-original-title="Add to cart">
+                    <p class="btn btn-light btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+todos_productos[x]['id']+`" data-original-title="Add to cart">
                         <i class="fa fa-shopping-cart"></i>
-                    </a>
+                    </p>
                 </div>
             </div>
         `;
@@ -101,6 +119,18 @@ function mostrarMas(){
         msg.innerHTML= '<h5>No hay más productos</h5>';
         msg.className='d-flex justify-content-center align-items-center mt-2';
         btn.append(msg);
+    }
+
+    let carritos = document.getElementsByClassName('carrito');
+    for(i=0; i<carritos.length; i++) {
+        carritos[i].addEventListener('click', function(e) {
+            if(carrito2 =="")
+                carrito2 += this.id;
+            else
+                carrito2 +=","+ this.id;
+
+            document.cookie = "carrito="+carrito2 +"; path=/";
+        });
     }
 }
 

@@ -55,7 +55,11 @@
             }
         document.getElementById("anadirCarrito").addEventListener("click", function(e) {
             id = document.getElementById("producto-id").value;
-            carrito2 +=","+ id;
+            if (carrito2 == "") {
+                carrito2 +=id;
+            }else{
+                carrito2 +=","+ id;
+            }
             document.cookie = "carrito="+carrito2 +"; path=/";
     });
     </script>

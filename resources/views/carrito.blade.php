@@ -35,7 +35,7 @@
     <tr>
         <td>{{$elemento2}}</td>
         <td>{{$elProducto->nombre}}</td>
-        <td><img src="{{ asset($producto->foto) }}" class="img-fluid"></td>
+        <td><img src="{{ asset($elProducto->foto) }}" class="img-fluid"></td>
         <td>{{$cantidad}}</td>
         <?php
         $preciototal = $elProducto->precio * $cantidad;
