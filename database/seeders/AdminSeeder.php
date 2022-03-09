@@ -16,6 +16,17 @@ class AdminSeeder extends Seeder
     public function run()
     {
         $faker = \Faker\Factory::create('ES_es');
+        
+        DB::table('users')->insert([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'email_verified_at' => now(),
+            'password' => password_hash('12345Abcde',PASSWORD_DEFAULT),
+            'telefono' => $faker-> phoneNumber(),
+            'rol' => $faker->boolean(true),
+            'direccion' => $faker->address(),
+            'remember_token' => $faker->text(10),
+        ]);
 
         DB::table('users')->insert([
             'name' => $faker->name(),
