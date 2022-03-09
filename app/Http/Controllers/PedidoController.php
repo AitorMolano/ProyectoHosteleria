@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carrito;
 use App\Models\Pedido;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,8 +17,21 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::where('id_cliente','like',Auth::user()->id);
-        return view('pedidos')->with('pedidos',$pedidos);
+        $pedidos = Pedido::all()->where('id_cliente','like',Auth::user()->id);
+        $carrito_total=[];
+        $productos = [];
+
+        foreach($pedidos as $pedido){
+            $productos=[];
+            $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
+            foreach($carrito as $producto){
+                $nombre_producto = Producto::find($producto['id'])['nombre'];
+                array_push($productos,$nombre_producto);
+            }
+            array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado']]);
+        }
+        // dd($carrito_total);
+        return view('pedidos')->with('carrito_total',$carrito_total);
     }
 
     /**
