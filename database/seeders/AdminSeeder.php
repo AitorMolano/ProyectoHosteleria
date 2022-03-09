@@ -21,7 +21,7 @@ class AdminSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
-            'password' => 'admin',
+            'password' => password_hash('12345Abcde',PASSWORD_DEFAULT),
             'telefono' => $faker-> phoneNumber(),
             'rol' => $faker->boolean(true),
             'direccion' => $faker->address(),

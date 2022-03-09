@@ -33,7 +33,7 @@ class ClienteSeeder extends Seeder
             'name' => 'cliente',
             'email' => 'cliente@gmail.com',
             'email_verified_at' => now(),
-            'password' => '12345Abcde',
+            'password' => password_hash('12345Abcde',PASSWORD_DEFAULT),
             'telefono' => $faker-> phoneNumber(),
             'rol' => $faker->boolean(false),
             'direccion' => $faker->address(),

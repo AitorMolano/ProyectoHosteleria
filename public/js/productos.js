@@ -94,6 +94,7 @@ function mostrarMas(){
         `;
         
     }
+    console.log(todos_productos.length)
     if((((pagina -1) * 12) + 12) == todos_productos.length){
         let btn = document.getElementsByClassName('boton')[0];
         btn.innerHTML = '';
