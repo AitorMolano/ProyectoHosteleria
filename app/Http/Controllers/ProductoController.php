@@ -59,7 +59,7 @@ class ProductoController extends Controller
        echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
 
         $productos = Producto::all();
-        return redirect('producto/create');
+        return redirect('/');
     }
 
     /**
