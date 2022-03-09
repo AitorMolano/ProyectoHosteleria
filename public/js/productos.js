@@ -62,7 +62,6 @@ function mostrarMas(){
     pagina++;
     let valor_x = (pagina -1)*12;
     let valor_limite = valor_x +12;
-
     let div_productos = document.getElementsByClassName('productos')[0];
 
     for(let x =valor_x ;x< valor_limite && x<todos_productos.length;x++){
@@ -94,8 +93,8 @@ function mostrarMas(){
         `;
         
     }
-    console.log(todos_productos.length)
-    if((((pagina -1) * 12) + 12) == todos_productos.length){
+    
+    if(valor_limite == todos_productos.length || valor_limite > todos_productos.length){
         let btn = document.getElementsByClassName('boton')[0];
         btn.innerHTML = '';
         let msg = document.createElement('h5');
