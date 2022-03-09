@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carrito;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Producto;
@@ -51,6 +52,7 @@ class CarritoController extends Controller
         return view('carrito', [
             'productos' => $productos
         ]);
+    
     
     }
 

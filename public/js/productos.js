@@ -4,13 +4,15 @@ var carrito="";
  
 $(document).ready(function(){
     obtenerDatos();
+    document.getElementById('categorias').addEventListener('change',filtroCategoria);
+    document.getElementById('nombre').addEventListener('keyup',mostrarLetras);
     var lasCookies = document.cookie;
     arrayCookies = lasCookies.split(" ");
         for (i=0; i<arrayCookies.length ; i++){
             if (arrayCookies[i].charAt(0)=="c")
                carrito = arrayCookies[i];
                carrito2= carrito.slice(8,-1);
-        }
+    }
 });
 
 function obtenerDatos(){
@@ -52,27 +54,33 @@ function primeros12(){
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+todos_productos[x]['id']+`">Ver M&aacute;s</a></div>
                     </div>
                     <p class="btn btn-light btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+todos_productos[x]['id']+`" data-original-title="Add to cart">
-                        <i class="fa fa-shopping-cart"></i>
-                    </p>
+                            <i class="fa fa-shopping-cart"></i>
+                        </p>
                 </div>
             </div>
         `;
     }
     let carritos = document.getElementsByClassName('carrito');
-        for(i=0; i<carritos.length; i++) {
-            carritos[i].addEventListener('click', function(e) {
-                if(carrito2 =="")
-                    carrito2 += this.id;
-                else
-                    carrito2 +=","+ this.id;
+    for(i=0; i<carritos.length; i++) {
+        carritos[i].addEventListener('click', function(e) {
+            if(carrito2 =="")
+                carrito2 += this.id;
+            else
+                carrito2 +=","+ this.id;
+
+            document.cookie = "carrito="+carrito2 +"; path=/";
+        });
+    }
+}
 
         document.cookie = "carrito="+carrito2 +"; path=/";
 });
         }
 }
 function mostrarMas(){
-    pagina = pagina++;
-
+    pagina++;
+    let valor_x = (pagina -1)*12;
+    let valor_limite = valor_x +12;
     let div_productos = document.getElementsByClassName('productos')[0];
     for(let x =pagina - 1 ;x< pagina * 12;x++){
         div_productos.innerHTML = div_productos.innerHTML + `
@@ -93,9 +101,33 @@ function mostrarMas(){
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver M&aacute;s</a></div>
                     </div>
+                    <p class="btn btn-light btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+todos_productos[x]['id']+`" data-original-title="Add to cart">
+                        <i class="fa fa-shopping-cart"></i>
+                    </p>
                 </div>
             </div>
         `;
+        
+    }
+    
+    if(valor_limite == todos_productos.length || valor_limite > todos_productos.length){
+        let btn = document.getElementsByClassName('boton')[0];
+        btn.innerHTML = '';
+        let msg = document.createElement('h5');
+        msg.innerHTML= '<h5>No hay más productos</h5>';
+        msg.className='d-flex justify-content-center align-items-center mt-2';
+        btn.append(msg);
     }
 
+    let carritos = document.getElementsByClassName('carrito');
+    for(i=0; i<carritos.length; i++) {
+        carritos[i].addEventListener('click', function(e) {
+            if(carrito2 =="")
+                carrito2 += this.id;
+            else
+                carrito2 +=","+ this.id;
+
+            document.cookie = "carrito="+carrito2 +"; path=/";
+        });
+    }
 }
