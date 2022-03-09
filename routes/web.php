@@ -18,21 +18,32 @@ use App\Http\Controllers\PedidoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/*
+----------------------------------------------
+GENERAL
+----------------------------------------------
+*/
+    Auth::routes();
+
+    Route::get('/home', [ProductoController::class, 'index'])->name('home');
+
+    Route::get('/', [ProductoController::class, 'index'])->name('home');
+
+    Route::get('/api/productos', [ApiController::class, 'productos'])->name('api-productos');
+    
+
+    Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+/*
+----------------------------------------------
+PRODUCTOS
+----------------------------------------------
+ */
+
 Route::get('producto/create', [ProductoController::class, 'create'])->name('createProduct');
 
 Route::get('producto/{id}', [ProductoController::class, 'show'])->name('detalleProd');
-
-Auth::routes();
-
-Route::get('/home', [ProductoController::class, 'index'])->name('home');
-
-Route::get('/', [ProductoController::class, 'index'])->name('home');
-
-Route::get('/api/productos', [ApiController::class, 'productos'])->name('api-productos');
-
-Route::post('/prueba', [ProductoController::class, 'prueba'])->name('prueba');
-
-Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::post('producto/store', [ProductoController::class, 'store'])->name('storeProduct');
 
@@ -41,6 +52,14 @@ Route::delete('producto/{id}', [ProductoController::class, 'destroy'])->name('bo
 Route::get('producto/{id}/edit', [ProductoController::class, 'edit'])->name('editProducto');
 
 Route::put('editarProducto/{id}', [ProductoController::class, 'update'])->name('actualizar');
+
+
+/*
+----------------------------------------------
+CARRITO
+----------------------------------------------
+ */
+
 
 Route::get('carrito/index', [CarritoController::class, 'index'])->name('indexCarrito');
 
