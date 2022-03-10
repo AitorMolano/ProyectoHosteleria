@@ -31,5 +31,10 @@ class ApiController extends Controller
      
     }
 
+  public function updatePedidos(Request $request){
+    return response()->json([
+        'respuesta' => $request['data'],
+    ],200);
+  }
   
 }

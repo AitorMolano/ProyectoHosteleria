@@ -267,3 +267,5 @@ function mostrarLetras(){
     }
     mostrarProductosFiltrados(productos_filtrados);
 }
+
+

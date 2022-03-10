@@ -46,6 +46,7 @@ class PedidoController extends Controller
             }
             array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado']]);
         }
+        // dd($carrito_total);
         
         return view('pedidos-admin')->with('carrito_total',$carrito_total);
     }

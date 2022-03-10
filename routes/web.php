@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\PedidoController;
 
 /*
@@ -30,8 +31,8 @@ GENERAL
 
     Route::get('/', [ProductoController::class, 'index'])->name('home');
 
-    Route::get('/api/productos', [ApiController::class, 'productos'])->name('api-productos');
-    
+    Route::get('/api/productos', [ApiController::class, 'productos'])->name('api-productos'); 
+    Route::post('/api/pedidos', [ApiController::class, 'updatePedidos'])->name('api-pedidosAdmin'); 
 
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -73,3 +74,5 @@ PEDIDO
 
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
 Route::get('/pedidos-admin', [PedidoController::class, 'indexAdmin'])->name('pedidos-admin');
+
+Route::get('/estado/{id}', [EstadoController::class, 'show'])->name('estado.show');
