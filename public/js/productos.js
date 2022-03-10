@@ -252,6 +252,18 @@ function mostrarProductosFiltrados(productos_filtrados){
         </div>
     `;
     }
+
+    let carritos = document.getElementsByClassName('carrito');
+    for(i=0; i<carritos.length; i++) {
+        carritos[i].addEventListener('click', function(e) {
+            if(carrito2 =="")
+                carrito2 += this.id;
+            else
+                carrito2 +=","+ this.id;
+
+            document.cookie = "carrito="+carrito2 +"; path=/";
+        });
+    }
 }
 
 function mostrarLetras(){

@@ -26,7 +26,6 @@
                     }
                     $preciototal = $elProducto->precio * $cantidad;
                     $total += $preciototal;
-
         ?>
           <div class="card-body p-4">
             <div class="row align-items-center justify-content-center">
@@ -59,9 +58,53 @@
               </div>
               <div class="col-md-2 d-flex justify-content-center">
                 <div>
-                    <input type="submit" value="Borrar" class="btn btn-danger mt-auto">
+                    <a onclick="borrar();" id="{{$elProducto->id}}" class="btn btn-danger mt-auto idProducto">Borrar</a>
                 </div>
               </div>
+              <script type="text/javascript">
+
+                function borrar(){
+                  let productosBorrar = document.getElementsByClassName('idProducto');
+                  
+                  for(i=0; i<productosBorrar.length; i++) {
+                    productosBorrar[i].addEventListener('click', function(e) {
+                      let borrar = this.id;
+                      var carrito2;
+                      var lista2;
+                      var lasCookies = document.cookie;
+                      arrayCookies = lasCookies.split(" ");
+                      for (i=0; i<arrayCookies.length ; i++){
+                              if (arrayCookies[i].charAt(0)=="c")
+                                carrito = arrayCookies[i];
+                                carrito2= carrito.slice(8,-1);
+                      }
+                      var lista = carrito2.split(",");
+                          var pos = lista.indexOf(borrar);
+                          
+                          if(pos==0){
+                            lista.shift();
+                            lista2 = lista;
+                          }
+                          else{
+                            lista2 = lista.splice(pos,1);
+                          }
+                          document.cookie = "carrito="+lista+"; path=/";
+                    });
+                  }
+
+                  $.ajax({
+                      data:  parametros,
+                      url:   'carrito.blade.php',
+                      type:  'post',
+                      beforeSend: function () {
+                              $("#resultado").html("Procesando, espere por favor...");
+                      },
+                      success:  function (response) {
+                              $("#resultado").html(response);
+                      }
+                    });
+                }
+              </script>
             </div>
             
           </div><hr>
@@ -102,10 +145,9 @@
             <?php
                 }
             ?>
-
         </div>
       </div>
     </div>
   </div>
 
-@endsection
+  @endsection
