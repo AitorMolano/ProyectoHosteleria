@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::dropIfExists('pedidos');
 
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->unsignedInteger('id_cliente');
             $table->foreign('id_cliente')->references('id')->on('users');
             $table->integer('suma_Precio');

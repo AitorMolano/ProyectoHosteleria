@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('carritos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->unsignedInteger('id_producto');
             $table->foreign('id_producto')->references('id')->on('productos');
             $table->unsignedInteger('id_pedido');
