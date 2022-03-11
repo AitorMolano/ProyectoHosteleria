@@ -27,7 +27,7 @@ class PedidoSeeder extends Seeder
         ]);
         DB::table('pedidos')->insert([
             'id_cliente' =>61,
-            'suma_precio'=>21,
+            'suma_precio'=>31,
             'estado'=>'en proceso'
         ]);
     }

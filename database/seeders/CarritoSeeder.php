@@ -39,7 +39,7 @@ class CarritoSeeder extends Seeder
 
         DB::table('carritos')->insert([
             'id_producto'=>311,
-            'id_pedido'=>12,
+            'id_pedido'=>21,
         ]);
         
     }
