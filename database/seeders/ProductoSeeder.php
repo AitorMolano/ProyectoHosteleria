@@ -67,7 +67,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/escalibada.png',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
-            'categoria' => 1,
+            'categoria' => 11,
         ]);
 
         DB::table('productos')->insert([
@@ -77,7 +77,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/canelones.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
-            'categoria' => 2
+            'categoria' => 11,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Pencas de acelga rellenas de paleta de Basatxerri',
@@ -86,7 +86,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/pencas.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
-            'categoria' => 2
+            'categoria' => 11,
         ]);
         DB::table('productos')->insert([
             'nombre' => 'Piquillos rellenos de merluza y gambas',
@@ -95,7 +95,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/piquillos.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
-            'categoria' => 2,
+            'categoria' => 11,
         ]);
 
         //PESCADOS
@@ -107,7 +107,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/bacalao.jpg',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
-            'categoria' => 3,
+            'categoria' => 21,
         ]);
 
         DB::table('productos')->insert([
