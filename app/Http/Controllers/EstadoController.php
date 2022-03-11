@@ -11,14 +11,16 @@ class EstadoController extends Controller
         $pedido = Pedido::find($id);
         $estado=0;
         switch($pedido['estado']){
-            case 'recibido': $estado =1;
+            case 'pedido enviado': $estado =1;
                 break;
-            case 'en proceso':$estado=2;
+            case 'en proceso': $estado =2;
                 break;
-            case 'preparado':$estado = 3;
+            case 'en camino':$estado=3;
+                break;
+            case 'recibido':$estado = 4;
                 break;
         }
-        $estado_porcentaje = ($estado * 100)/3;
+        $estado_porcentaje = ($estado * 100)/4;
         
         return view('estado')->with('estado_porcentaje',$estado_porcentaje)->with('estado',$pedido['estado'])->with('id',$id);
 

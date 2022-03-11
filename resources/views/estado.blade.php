@@ -45,20 +45,29 @@
                 <input type="hidden" name="id_pedido" id='pedido-id' value='{{$id}}'/>
                 <select name="estado" id='estado-nuevo' class=" form-control bg-purple text-white rounded-pill" data-bs-toggle="tooltip" data-bs-placement="top" title="Para modificar el estado cambia el valor del estado actual y haga click en aceptar" class="bg-purple text-white rounded-pill p-2 ">
                     @switch($estado)
-                        @case('recibido')
-                                <option value="recibido">Recibido</option>
+                        @case('pedido enviado')
+                                <option value="pedido enviado">Pedido Enviado</option>
                                 <option value="en proceso">En Proceso</option>
-                                <option value="preparado">Preparado</option>
+                                <option value="en camino">En camino</option>
+                                <option value="recibido">Recibido</option>
                             @break;
                         @case('en proceso')
                                 <option value="en proceso">En Proceso</option>
-                                <option value="preparado">Preparado</option>
+                                <option value="en camino">En camino</option>
                                 <option value="recibido">Recibido</option>
-                            @break;
-                        @case('preparado')
-                                <option value="preparado">Preparado</option>
+                                <option value="pedido enviado">Pedido Enviado</option>
+                            @break;   
+                        @case('en camino')
+                                <option value="en camino">En camino</option>
+                                <option value="recibido">Recibido</option>
+                                <option value="pedido enviado">Pedido Enviado</option>
                                 <option value="en proceso">En Proceso</option>
+                            @break;
+                        @case('recibido')
                                 <option value="recibido">Recibido</option>
+                                <option value="pedido enviado">Pedido Enviado</option>
+                                <option value="en proceso">En Proceso</option>
+                                <option value="en camino">En camino</option>
                             @break;
                     @endswitch
                 </select>

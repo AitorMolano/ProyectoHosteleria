@@ -23,7 +23,7 @@ class PedidoSeeder extends Seeder
         DB::table('pedidos')->insert([
             'id_cliente' =>8,
             'suma_precio'=>31,
-            'estado'=>'recibido'
+            'estado'=>'en camino'
         ]);
         DB::table('pedidos')->insert([
             'id_cliente' =>7,

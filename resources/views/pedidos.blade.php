@@ -11,7 +11,6 @@
   </thead>
   <tbody>
       @foreach ($carrito_total as $carrito)
-      
         <tr>
             <td class="text-capitalize">
             @foreach($carrito['productos'] as $producto)
@@ -20,7 +19,7 @@
                 </td>
             <td>{{$carrito['suma']}} &euro;</td>
             <td class="text-capitalize">
-              <button type="button" class="btn btn-purple"><a href="{{ route('estado.show', $carrito_total[0]['id_pedido']) }}" class="text-decoration-none text-white">Ver estado</a></button> 
+              <button type="button" class="btn btn-purple"><a href="{{ route('estado.show', $carrito['id_pedido']) }}" class="text-decoration-none text-white">Ver estado</a></button> 
           </td>
         </tr>
       @endforeach
