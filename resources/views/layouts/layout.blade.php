@@ -10,9 +10,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
-<body class='bg-ligth' style="height: 100vh;">
-    <div  class="container-fluid" style="height:100%"> 
-        <header class='row'>
+<body class='bg-light' style="height: 100vh;">
+    <div  class="container-fluid m-0 p-0" style="height:100%"> 
+        <header class='row' style="width: 100%;">
             
         <nav class="navbar navbar-expand-md navbar-dark bg-purple shadow-sm">
             <div class="container">
@@ -89,14 +89,14 @@
             </script>
         </header>
 
-        <main class='row'>
-            <div class='col-12 d-flex justify-content-center align-items-center'>
+        <main class='row' style="width: 100%;">
+            <div class='col-12 d-flex justify-content-center align-items-center h-25 m-0 p-0'>
                 <img src="{{ asset('img/logo.png') }}" class="img-fluid h-50"/>
             </div>
         
             @yield('content')
         </main>
-        <footer class="bg-dark text-white row d-flex mt-3 justify-content-between">     
+        <footer class="bg-dark text-white row d-flex mt-3 mb-0 justify-content-between" style="width: 100%;">     
             <p class='col-6 my-3 p-3'>FUNDACIÓN DIOCESANAS - JESÚS OBRERO FUNDAZIOA  © EGIBIDE</p>   
             <p class='col-6 my-3 p-3'>Diseñado por Aitor,Rafa,Alaitz :S | Desarrollado por Aitor,Rafa,Alaitz :D </p>       
         </footer>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pedido;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,10 +32,5 @@ class ApiController extends Controller
      
     }
 
-  public function updatePedidos(Request $request){
-    return response()->json([
-        'respuesta' => $request['data'],
-    ],200);
-  }
-  
+
 }
