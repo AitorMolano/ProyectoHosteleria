@@ -19,7 +19,6 @@ class PedidoController extends Controller
     {
         $pedidos = Pedido::all()->where('id_cliente','like',Auth::user()->id);
         $carrito_total=[];
-        $productos = [];
 
         foreach($pedidos as $pedido){
             $productos=[];
