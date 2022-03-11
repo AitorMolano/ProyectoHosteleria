@@ -47,7 +47,7 @@ function primeros12(){
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`</h5>
+                            <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`id: `+todos_productos[x]['id']+`</h5>
                             <!-- Product price-->
                             `+todos_productos[x]['precio']+` &euro;
                         </div>
@@ -94,7 +94,7 @@ function mostrarMas(){
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`</h5>
+                            <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`id: `+todos_productos[x]['id']+`</h5>
                             <!-- Product price-->
                             `+todos_productos[x]['precio']+` &euro;
                         </div>
