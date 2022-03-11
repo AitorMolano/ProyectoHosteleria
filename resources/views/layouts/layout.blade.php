@@ -10,7 +10,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
-<body class='bg-light' style="height: 100vh;">
+<body class='bg-light user-select-none' style="height: 100vh;">
     <div  class="container-fluid m-0 p-0" style="height:100%"> 
         <header class='row' style="width: 100%;">
             

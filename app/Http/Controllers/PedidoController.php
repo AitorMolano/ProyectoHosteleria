@@ -28,7 +28,7 @@ class PedidoController extends Controller
                 $nombre_producto = Producto::find($producto['id'])['nombre'];
                 array_push($productos,$nombre_producto);
             }
-            array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado']]);
+            array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado'],'id_cliente'=>$pedido['id_cliente']]);
         }
         // dd($carrito_total);
         return view('pedidos')->with('carrito_total',$carrito_total);
@@ -44,7 +44,7 @@ class PedidoController extends Controller
                 $nombre_producto = Producto::find($producto['id'])['nombre'];
                 array_push($productos,$nombre_producto);
             }
-            array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado']]);
+            array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado'],'id_cliente'=>$pedido['id_cliente']]);
         }
         // dd($carrito_total);
         

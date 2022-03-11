@@ -5152,7 +5152,7 @@ textarea.form-control-lg {
   height: 1rem;
   overflow: hidden;
   font-size: 0.675rem;
-  background-color: #e9ecef;
+  background-color: #fff;
   border-radius: 0.25rem;
 }
 
@@ -5164,7 +5164,7 @@ textarea.form-control-lg {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #0d6efd;
+  background-color: #81005d;
   transition: width 0.6s ease;
 }
 @media (prefers-reduced-motion: reduce) {
