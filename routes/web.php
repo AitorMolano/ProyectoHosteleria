@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\PedidoController;
 
 /*
@@ -18,21 +19,31 @@ use App\Http\Controllers\PedidoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/*
+----------------------------------------------
+GENERAL
+----------------------------------------------
+*/
+    Auth::routes();
+
+    Route::get('/home', [ProductoController::class, 'index'])->name('home');
+
+    Route::get('/', [ProductoController::class, 'index'])->name('home');
+
+    Route::get('/api/productos', [ApiController::class, 'productos'])->name('api-productos'); 
+
+    Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+/*
+----------------------------------------------
+PRODUCTOS
+----------------------------------------------
+ */
+
 Route::get('producto/create', [ProductoController::class, 'create'])->name('createProduct');
 
 Route::get('producto/{id}', [ProductoController::class, 'show'])->name('detalleProd');
-
-Auth::routes();
-
-Route::get('/home', [ProductoController::class, 'index'])->name('home');
-
-Route::get('/', [ProductoController::class, 'index'])->name('home');
-
-Route::get('/api/productos', [ApiController::class, 'productos'])->name('api-productos');
-
-Route::post('/prueba', [ProductoController::class, 'prueba'])->name('prueba');
-
-Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::post('producto/store', [ProductoController::class, 'store'])->name('storeProduct');
 
@@ -42,6 +53,14 @@ Route::get('producto/{id}/edit', [ProductoController::class, 'edit'])->name('edi
 
 Route::put('editarProducto/{id}', [ProductoController::class, 'update'])->name('actualizar');
 
+
+/*
+----------------------------------------------
+CARRITO
+----------------------------------------------
+ */
+
+
 Route::get('carrito/index', [CarritoController::class, 'index'])->name('indexCarrito');
 
 Route::get('carrito/show', [CarritoController::class, 'show'])->name('showCarrito');
@@ -49,3 +68,15 @@ Route::get('carrito/show', [CarritoController::class, 'show'])->name('showCarrit
 Route::post('carrito/store', [CarritoController::class, 'store'])->name('storeCarrito');
 
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
+/*
+----------------------------------------------
+PEDIDO
+----------------------------------------------
+ */
+
+Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
+Route::get('/pedidos-admin', [PedidoController::class, 'indexAdmin'])->name('pedidos-admin');
+
+Route::get('/estado/{id}', [EstadoController::class, 'show'])->name('estado.show');
+
+Route::post('/pedidos/admin', [EstadoController::class, 'update'])->name('pedidos.update'); 

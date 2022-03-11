@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Carrito;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -20,5 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ClienteSeeder::class);
         $this->call(CategoriasSeeder::class);
         $this->call(ProductoSeeder::class);
+        $this->call(PedidoSeeder::class);
+        $this->call(CarritoSeeder::class);
     }
 }

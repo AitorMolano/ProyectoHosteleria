@@ -56,7 +56,7 @@ function primeros12(){
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+todos_productos[x]['id']+`">Ver M&aacute;s</a></div>
                     </div>
-                    <p class="btn btn-light btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+todos_productos[x]['id']+`" data-original-title="Add to cart">
+                    <p class="btn btn-white btn-rounded mr-1 carrito" data-toggle="tooltip " id="`+todos_productos[x]['id']+`" data-original-title="Add to cart">
                             <i class="fa fa-shopping-cart"></i>
                         </p>
                 </div>
@@ -103,7 +103,7 @@ function mostrarMas(){
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+todos_productos[x]['id']+`">Ver M&aacute;s</a></div>
                     </div>
-                    <p class="btn btn-light btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+todos_productos[x]['id']+`" data-original-title="Add to cart">
+                    <p class="btn btn-white btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+todos_productos[x]['id']+`" data-original-title="Add to cart">
                         <i class="fa fa-shopping-cart"></i>
                     </p>
                 </div>
@@ -279,3 +279,5 @@ function mostrarLetras(){
     }
     mostrarProductosFiltrados(productos_filtrados);
 }
+
+
