@@ -24,12 +24,11 @@ class PedidoController extends Controller
             $productos=[];
             $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
             foreach($carrito as $producto){
-                $nombre_producto = Producto::find($producto['id'])['nombre'];
+                $nombre_producto = Producto::find($producto['id_producto'])['nombre'];
                 array_push($productos,$nombre_producto);
             }
             array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado'],'id_cliente'=>$pedido['id_cliente']]);
         }
-        // dd($carrito_total);
         return view('pedidos')->with('carrito_total',$carrito_total);
     }
 

@@ -116,7 +116,8 @@
         </div>
 
         <div class="d-flex justify-content-end">
-          <a  class="btn btn-light btn-lg me-2" href="{{ route('home') }}">Volver a la tienda</a>
+          <button class="btn btn-light btn-lg me-2 p-1 px-2 bg-graydark"><a class="text-decoration-none text-black" href="{{ route('home') }}">Volver a la tienda</a></button>
+          
           
           <?php
             if(!Auth::user()){
