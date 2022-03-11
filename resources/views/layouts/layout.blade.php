@@ -83,7 +83,7 @@
                 var carrito ="[]";
                 carrito = JSON.parse(carrito);
                 sessionStorage.setItem("carrito", JSON.stringify(carrito));
-                document.cookie = "carrito =; max -age =0";
+                document.cookie = "carrito =; max-age =0";
                 alert("Carrito vaciado");
                 });
             </script>

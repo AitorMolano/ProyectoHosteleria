@@ -37,7 +37,7 @@ function primeros12(){
     let div_productos = document.getElementsByClassName('productos')[0];
     for(let x =0;x<12;x++){
         div_productos.innerHTML = div_productos.innerHTML + `
-            <div class="col-xl-3 col-md-4 col-6 mt-2">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12 mt-2">
                 <div class="card h-100">
                     <!-- Product image-->
                     <div class="d-flex justify-content-center align-items-center mt-3">
@@ -47,7 +47,7 @@ function primeros12(){
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`</h5>
+                            <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`id: `+todos_productos[x]['id']+`</h5>
                             <!-- Product price-->
                             `+todos_productos[x]['precio']+` &euro;
                         </div>
@@ -84,7 +84,7 @@ function mostrarMas(){
 
     for(let x =valor_x ;x< valor_limite && x<todos_productos.length;x++){
         div_productos.innerHTML = div_productos.innerHTML + `
-            <div class="col-xl-3 col-md-4 col-6 mt-2">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12 mt-2">
                 <div class="card h-100">
                     <!-- Product image-->
                     <div class="d-flex justify-content-center align-items-center mt-3">
@@ -94,7 +94,7 @@ function mostrarMas(){
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`</h5>
+                            <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`id: `+todos_productos[x]['id']+`</h5>
                             <!-- Product price-->
                             `+todos_productos[x]['precio']+` &euro;
                         </div>
@@ -226,7 +226,7 @@ function mostrarProductosFiltrados(productos_filtrados){
 
     for(let x =0;x<productos_filtrados.length;x++){
         div_productos.innerHTML = div_productos.innerHTML + `
-        <div class="col-xl-3 col-md-4 col-6 mt-2">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mt-2">
             <div class="card h-100">
                 <!-- Product image-->
                 <div class="d-flex justify-content-center align-items-center mt-3">
@@ -245,12 +245,24 @@ function mostrarProductosFiltrados(productos_filtrados){
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+productos_filtrados[x]['id']+`">Ver M&aacute;s</a></div>
                 </div>
-                <a class="btn btn-light btn-rounded mr-1" data-toggle="tooltip" href="#" data-original-title="Add to cart">
-                        <i class="fa fa-shopping-cart"></i>
-                    </a>
+                <p class="btn btn-light btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+productos_filtrados[x]['id']+`" data-original-title="Add to cart">
+                <i class="fa fa-shopping-cart"></i>
+                    </p>
             </div>
         </div>
     `;
+    }
+
+    let carritos = document.getElementsByClassName('carrito');
+    for(i=0; i<carritos.length; i++) {
+        carritos[i].addEventListener('click', function(e) {
+            if(carrito2 =="")
+                carrito2 += this.id;
+            else
+                carrito2 +=","+ this.id;
+
+            document.cookie = "carrito="+carrito2 +"; path=/";
+        });
     }
 }
 

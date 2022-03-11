@@ -14,8 +14,6 @@
         <label for="nombre">Nombre</label>
         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
       </div>
-    </div>
-    <div class="row">
       <div class="form-group col-md-4">
         <label for="precio">Precio</label>
         <input type="text" class="form-control" id="precio" name="precio" placeholder="">
@@ -32,12 +30,23 @@
         <label for="cantidadMinima">Cantidad Minima</label>
         <input type="text" class="form-control" id="cantidadMinima" name="cantidadMinima" placeholder="">
       </div>
-    </div>
-    <div class="row">
       <div class="form-group col-md-4">
         <label for="foto">Imagen</label>
         <input type="file" class="form-control" id="foto" name="foto" placeholder="">
       </div>
+    </div>
+    <div class="row">
+      <select name="categoria" id="categorias" class="bg-purple text-white rounded-pill p-2 ">
+            <option value="Fritos">Fritos</option>
+            <option value="Entrantes">Entrantes</option>
+            <option value="Pescado">Pescado</option>
+            <option value="Carne">Carne</option>
+            <option value="Semifrios">Semifrios</option>
+            <option value="Tarta de bizcocho">Tarta de bizcocho</option>
+            <option value="Tarta de hojaldre">Tarta de hojaldre</option>
+            <option value="Tartas variadas">Tartas variadas</option>
+            <option value="Variedades">Variedades</option>
+      </select>
     </div>
     <div class="row mt-3">
       <div class="col-md-4">
