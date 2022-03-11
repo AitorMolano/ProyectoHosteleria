@@ -89,20 +89,10 @@
                             lista2 = lista.splice(pos,1);
                           }
                           document.cookie = "carrito="+lista+"; path=/";
+                          window.location.reload();
+
                     });
                   }
-
-                  $.ajax({
-                      data:  parametros,
-                      url:   'carrito.blade.php',
-                      type:  'post',
-                      beforeSend: function () {
-                              $("#resultado").html("Procesando, espere por favor...");
-                      },
-                      success:  function (response) {
-                              $("#resultado").html(response);
-                      }
-                    });
                 }
               </script>
             </div>

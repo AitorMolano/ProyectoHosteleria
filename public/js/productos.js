@@ -37,7 +37,7 @@ function primeros12(){
     let div_productos = document.getElementsByClassName('productos')[0];
     for(let x =0;x<12;x++){
         div_productos.innerHTML = div_productos.innerHTML + `
-            <div class="col-xl-3 col-md-4 col-6 mt-2">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12 mt-2">
                 <div class="card h-100">
                     <!-- Product image-->
                     <div class="d-flex justify-content-center align-items-center mt-3">
@@ -84,7 +84,7 @@ function mostrarMas(){
 
     for(let x =valor_x ;x< valor_limite && x<todos_productos.length;x++){
         div_productos.innerHTML = div_productos.innerHTML + `
-            <div class="col-xl-3 col-md-4 col-6 mt-2">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12 mt-2">
                 <div class="card h-100">
                     <!-- Product image-->
                     <div class="d-flex justify-content-center align-items-center mt-3">
@@ -226,7 +226,7 @@ function mostrarProductosFiltrados(productos_filtrados){
 
     for(let x =0;x<productos_filtrados.length;x++){
         div_productos.innerHTML = div_productos.innerHTML + `
-        <div class="col-xl-3 col-md-4 col-6 mt-2">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mt-2">
             <div class="card h-100">
                 <!-- Product image-->
                 <div class="d-flex justify-content-center align-items-center mt-3">

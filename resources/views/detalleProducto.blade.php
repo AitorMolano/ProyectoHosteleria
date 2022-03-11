@@ -9,8 +9,7 @@
                         <h3 class="box-title">{{ $producto -> nombre }}</h3>
                             <h4 class="box-title mt-2">Descripción</h4>
                             <p>{{ $producto->descripcion }}</p>
-                            <?php
-                                6531                            ?>
+                            <?php $disponible = $producto->disponible?>
                             <button class="btn btn-success btn-rounded" id="btnDisponible" style="display:none;">Disponible</button>
                             <button class="btn btn-danger btn-rounded" id="btnNoDisponible" style="display:none;">No disponible</button>
                             
