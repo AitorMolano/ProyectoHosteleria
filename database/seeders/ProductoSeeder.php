@@ -61,7 +61,7 @@ class ProductoSeeder extends Seeder
         //ENTRANTES
 
         DB::table('productos')->insert([
-            'nombre' => 'Escalibada de verduras con ventresca de bonito',
+            'nombre' => 'Escalibada de verduras',
             'precio' => 7.80,
             'descripcion' => 'Escalibada de verduras con ventresca de bonito',
             'foto' => 'img/escalibada.png',
