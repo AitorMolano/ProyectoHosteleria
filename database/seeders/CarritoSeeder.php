@@ -20,11 +20,11 @@ class CarritoSeeder extends Seeder
             'id_pedido'=>1,
         ]);
         DB::table('carritos')->insert([
-            'id_producto'=>3,
+            'id_producto'=>21,
             'id_pedido'=>1,
         ]);
         DB::table('carritos')->insert([
-            'id_producto'=>4,
+            'id_producto'=>31,
             'id_pedido'=>1,
         ]);
 
