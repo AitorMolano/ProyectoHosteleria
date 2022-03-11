@@ -58,6 +58,24 @@
         <td>{{$total}}</td>
     </tr>
 </table>
-    
+<?php
+    if(!Auth::user()){
+?>
+        <button type="submit" disabled class="btn btn-primary ">Comprar</button>
+<?php
+    }
+    else{
+?>
+        <form action="{{ route('storeCarrito')}}" method="post" enctype="multipart/form-data">
+            @csrf       
+            <input type="hidden" name="id_cliente"  id="id_cliente" value="{{ Auth::user()->id }}" />
+            <input type="hidden" name="suma_precio" id="suma_precio" value="{{$total}}" />
+            <button type="submit" class="btn btn-primary">Comprar</button>
+        </form>
+<?php
+    }
+?>
+
+
 </div>
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Carrito;
 use App\Models\Producto;
+use App\Models\Pedido;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class CarritoController extends Controller
@@ -44,7 +45,17 @@ class CarritoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pedido = new Pedido;
+        $pedido->id_cliente = request('id_cliente');
+        $pedido->suma_Precio = request('suma_precio');
+        $pedido->estado = "en proceso";
+
+        $pedido->save();
+
+       echo '<script type="text/javascript">alert("Pedido realizado correctamente");</script>';
+
+        $productos = Producto::all();
+        return redirect('/');
     }
 
     /**

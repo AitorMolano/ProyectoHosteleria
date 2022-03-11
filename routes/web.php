@@ -7,7 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\PedidoController;
-
+use App\Http\Controllers\EstadisticaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,3 +47,11 @@ Route::get('carrito/index', [CarritoController::class, 'index'])->name('indexCar
 Route::get('carrito/show', [CarritoController::class, 'show'])->name('showCarrito');
 
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
+
+
+Route::post('carrito/store', [CarritoController::class, 'store'])->name('storeCarrito');
+
+Route::get('estadisticas', [EstadisticaController::class, 'index'])->name('indexEstadisticas');
+
+Route::get('estadisticas/controller', [App\Http\Controllers\ApiController::class, 'obtenerEstadisticas']);
+

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hosteleria</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
@@ -52,15 +53,14 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 @if ((Auth::user()->rol)==1)
                                 <a class="dropdown-item" href="{{ route('createProduct') }}">Crear</a>
+                                <a class="dropdown-item" href="{{ route('indexEstadisticas') }}">Estadísticas</a>
                                 @endif    
                                 <a id="logout" class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+
                                 </div>
                             </li>
                         @endguest
