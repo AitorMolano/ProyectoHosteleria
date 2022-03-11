@@ -67,7 +67,7 @@ class ProductoSeeder extends Seeder
             'foto' => 'img/escalibada.png',
             'disponible' => $faker->boolean($chanceOfGettingTrue = 70),
             'cantidadMinima' => 2,
-            'categoria' => 2,
+            'categoria' => 1,
         ]);
 
         DB::table('productos')->insert([
