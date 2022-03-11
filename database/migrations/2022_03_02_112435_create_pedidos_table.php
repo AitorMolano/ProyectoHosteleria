@@ -17,7 +17,7 @@ return new class extends Migration
 
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_cliente');
+            $table->unsignedInteger('id_cliente');
             $table->foreign('id_cliente')->references('id')->on('users');
             $table->integer('suma_Precio');
             $table->enum('estado', ['recibido', 'en proceso', 'preparado'])->default('recibido');
