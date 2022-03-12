@@ -12,9 +12,9 @@
 </head>
 <body class='bg-light user-select-none' style="height: 100vh;">
     <div  class="container-fluid m-0 p-0" style="height:100%"> 
-        <header class='row' style="width: 100%;">
+        <header class='row' class="m-0 p-0" style="width: 100%;">
             
-        <nav class="navbar navbar-expand-md navbar-dark bg-purple shadow-sm">
+        <nav class="col-12 navbar navbar-expand-md navbar-dark bg-purple shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     Escuela Hosteleria
@@ -98,7 +98,7 @@
         
             @yield('content')
         </main>
-        <footer class="bg-dark text-white row d-flex mt-3 mb-0 justify-content-between" style="width: 100%;">     
+        <footer class="bg-dark text-white row d-flex mt-3 mb-0 justify-content-between" >     
             <p class='col-6 my-3 p-3'>FUNDACIÓN DIOCESANAS - JESÚS OBRERO FUNDAZIOA  © EGIBIDE</p>   
             <p class='col-6 my-3 p-3'>Diseñado por Aitor,Rafa,Alaitz :S | Desarrollado por Aitor,Rafa,Alaitz :D </p>       
         </footer>
