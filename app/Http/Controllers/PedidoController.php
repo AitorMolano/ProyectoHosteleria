@@ -50,7 +50,7 @@ class PedidoController extends Controller
                 $id_cliente_final = intval($id_cliente_final ) + intval($id_cliente[$i]);
 
             }
-            array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado'],'id_cliente'=>$pedido['id_cliente']]);
+            array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado'],'id_cliente'=>$id_cliente_final ]);
         }
         // dd($carrito_total);
         
