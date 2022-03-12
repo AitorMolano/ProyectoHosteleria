@@ -94,7 +94,7 @@ function mostrarMas(){
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">`+todos_productos[x]['nombre']+'ª'+`</h5>
+                            <h5 class="fw-bolder">`+todos_productos[x]['nombre']+`</h5>
                             <!-- Product price-->
                             `+todos_productos[x]['precio']+` &euro;
                         </div>
