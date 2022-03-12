@@ -16,17 +16,17 @@ class PedidoSeeder extends Seeder
     public function run()
     {
         DB::table('pedidos')->insert([
-            'id_cliente' =>8,
+            'id_cliente' =>71,
             'suma_precio'=>17.40,
             'estado'=>'recibido'
         ]);
         DB::table('pedidos')->insert([
-            'id_cliente' =>8,
+            'id_cliente' =>71,
             'suma_precio'=>31,
-            'estado'=>'en camino'
+            'estado'=>'recibido'
         ]);
         DB::table('pedidos')->insert([
-            'id_cliente' =>7,
+            'id_cliente' =>61,
             'suma_precio'=>31,
             'estado'=>'en proceso'
         ]);
