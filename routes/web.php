@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\PerfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,3 +81,10 @@ Route::get('/pedidos-admin', [PedidoController::class, 'indexAdmin'])->name('ped
 Route::get('/estado/{id}', [EstadoController::class, 'show'])->name('estado.show');
 
 Route::post('/pedidos/admin', [EstadoController::class, 'update'])->name('pedidos.update'); 
+/*
+----------------------------------------------
+PERFIL
+----------------------------------------------
+ */
+Route::get('/perfil', [PerfilController::class, 'index'])->name('perfil');
+Route::post('/perfil/store', [PerfilController::class, 'store'])->name('perfil.store');
