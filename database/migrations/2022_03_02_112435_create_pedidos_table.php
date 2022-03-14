@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedInteger('id_cliente');
             $table->foreign('id_cliente')->references('id')->on('users');
             $table->integer('suma_Precio');
-            $table->enum('estado', ['pedido enviado', 'en proceso','en camino','recibido' ])->default('recibido');
+            $table->enum('estado', ['pedido enviado', 'en proceso','en camino','recibido' ])->default('pedido enviado');
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();
