@@ -36,7 +36,11 @@ class PedidoController extends Controller
 
     public function indexAdmin(){
         $carrito_total=[];
-        $pedidos = Pedido::all();
+        $hoy = date('Y-m-d ');
+        $ayer = date('Y-m-d', strtotime ( '- 1 month' , strtotime ( $hoy ) ));
+        $pedidos = Pedido::whereDate('created_at','>',$ayer)->whereDate('created_at','<=',$hoy)->get();
+                
+        //$pedidos = Pedido::all();
         foreach($pedidos as $pedido){
             $productos=[];
             $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
