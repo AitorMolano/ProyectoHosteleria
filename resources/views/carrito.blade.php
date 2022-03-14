@@ -3,14 +3,12 @@
 @section('content')
 <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col">
-        <p><span class="h2">Carrito</span></p>
-
-        <div class="card mb-4">
-        <?php 
+      <div class="col"> <?php 
           if ($lleno == 0) {
             ?>
-            <h1>Vacio</h1>
+       
+       
+            <h3>Carrito vacío</h3>
             <?php
           }
           else{
@@ -33,7 +31,10 @@
                     }
                     $preciototal = $elProducto->precio * $cantidad;
                     $total += $preciototal;
-        ?>
+        ?> 
+        <p><span class="h2">Carrito</span></p>
+
+        <div class="card mb-4">
           <div class="card-body p-4">
             <div class="row align-items-center justify-content-center">
               <div class="col-md-2 d-flex justify-content-center" style="max-width: 50%;">
