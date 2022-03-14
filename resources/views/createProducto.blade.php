@@ -13,7 +13,7 @@
       <form action="{{ route('storeProduct')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-6 mt-2">
             <label for="nombre">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
           </div>
@@ -57,8 +57,8 @@
         </div>
 
         <div class="row mt-3 d-flex ">
-          <div class="col-sm-3">
-            <button type="submit" class="btn btn-primary ">Crear producto</button>
+          <div class="col-sm-3 mt-1">
+            <button type="submit" onclick='btn_crear()' class="btn btn-primary ">Crear producto</button>
           </div>
           <div class="col-sm-3 mt-1">
             <a class="btn btn-outline-dark mt-auto" href="{{ route('home') }}">Volver</a>

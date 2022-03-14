@@ -56,8 +56,8 @@ function primeros12(){
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+todos_productos[x]['id']+`">Ver M&aacute;s</a></div>
                     </div>
-                    <p class="btn btn-white btn-rounded mr-1 carrito" data-toggle="tooltip " id="`+todos_productos[x]['id']+`" data-original-title="Add to cart">
-                            <i class="fa fa-shopping-cart"></i>
+                    <p class="btn btn-white btn-rounded mr-1 carrito" data-toggle="tooltip " id="`+todos_productos[x]['id']+`"data-original-title="Add to cart">
+                            <i class="fa fa-shopping-cart" ></i>
                         </p>
                 </div>
             </div>
@@ -72,7 +72,27 @@ function primeros12(){
                 carrito2 +=","+ this.id;
 
             document.cookie = "carrito="+carrito2 +"; path=/";
+            mostrarAlert()
         });
+    }
+
+    if(document.getElementById('compra').value){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Compra realizada',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
+    if(document.getElementById('producto_guardado').value){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Compra realizada',
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
 }
 
@@ -245,7 +265,7 @@ function mostrarProductosFiltrados(productos_filtrados){
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="producto/`+productos_filtrados[x]['id']+`">Ver M&aacute;s</a></div>
                 </div>
-                <p class="btn btn-light btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+productos_filtrados[x]['id']+`" data-original-title="Add to cart">
+                <p class="btn btn-white btn-rounded mr-1 carrito" data-toggle="tooltip" id="`+productos_filtrados[x]['id']+`" data-original-title="Add to cart">
                 <i class="fa fa-shopping-cart"></i>
                     </p>
             </div>
@@ -280,4 +300,21 @@ function mostrarLetras(){
     mostrarProductosFiltrados(productos_filtrados);
 }
 
-
+function mostrarAlert(){
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Producto añadido al carrito correctamente'
+      })
+}
