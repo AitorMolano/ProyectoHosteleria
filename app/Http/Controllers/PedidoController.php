@@ -54,12 +54,11 @@ class PedidoController extends Controller
             $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
             foreach($carrito as $producto){
                 $id_producto = strval($producto['id_producto']);
-                dd($id_producto);
                 $id_producto_final = 0;
                 for($y=0;$y<strlen($id_producto);$y++){
                     $id_producto_final = intval($id_producto_final) + intval($id_producto[$y]);
                 }
-                // dd($id_producto_final);
+                dd($id_producto_final);
                 $nombre_producto = Producto::find($id_producto_final)['nombre'];
                 array_push($productos,$nombre_producto);
             }
