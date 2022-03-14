@@ -36,13 +36,14 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         $producto = new Producto;
         $producto->nombre = request('nombre');
         $producto->precio = request('precio');
         $producto->descripcion = request('descripcion');
         $producto->disponible = 1;
         $producto->cantidadMinima = request('cantidadMinima');
-
+        $producto->categoria = request('categoria');
         if($request->hasFile('foto')){
             $foto = $request->file('foto');
             $foto_nueva  = $foto->getClientOriginalName();
