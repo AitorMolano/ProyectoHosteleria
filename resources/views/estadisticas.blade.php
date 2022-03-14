@@ -14,7 +14,7 @@
             <div id="container"></div>
         </figure>
     
-        <h3>Pedidos actuales</h3>
+        <h3>Pedidos</h3>
         <div class="row">
         <table style="width:80%;margin-left:10%;"class="table table-striped table-hover table-responsive">
         <tr>
