@@ -41,6 +41,14 @@
             document.getElementById("btnDisponible").style.display = "block";
         }
 
+        var lasCookies = document.cookie;
+        arrayCookies = lasCookies.split(" ");
+            for (i=0; i<arrayCookies.length ; i++){
+                if (arrayCookies[i].charAt(0)=="c")
+                carrito = arrayCookies[i];
+                carrito2= carrito.slice(8,-1);
+            }
+
         let carritos = document.getElementsByClassName('carrito');
         for(i=0; i<carritos.length; i++) {
             carritos[i].addEventListener('click', function(e) {
