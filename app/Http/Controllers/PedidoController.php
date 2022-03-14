@@ -20,7 +20,7 @@ class PedidoController extends Controller
     {
         $hoy = date('Y-m-d ');
         $ayer = date('Y-m-d', strtotime ( '- 1 month' , strtotime ( $hoy ) ));
-        $pedidos = Pedido::all()->where('id_cliente','like',Auth::user()->id)->whereDate('created_at','>',$ayer)->whereDate('created_at','<=',$hoy)->get();
+        $pedidos = Pedido::where('id_cliente','like',Auth::user()->id)->whereDate('created_at','>',$ayer)->whereDate('created_at','<=',$hoy)->get();
         $carrito_total=[];
 
         foreach($pedidos as $pedido){
