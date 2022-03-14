@@ -81,7 +81,7 @@ class CarritoController extends Controller
         $lleno = 0;
         $productos="";
 
-        if ($_COOKIE["carrito"]) {
+        if (isset($_COOKIE["carrito"])) {
             $productos = Producto::all();
             $lleno = 1;
         }
