@@ -70,7 +70,7 @@ class PedidoController extends Controller
             }
             array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado'],'id_cliente'=>$id_cliente_final ]);
         }
-        // dd($carrito_total);
+        dd($carrito);
         
         return view('pedidos-admin')->with('carrito_total',$carrito_total);
     }
