@@ -58,7 +58,7 @@ class PedidoController extends Controller
                 for($y=0;$y<strlen($id_producto);$y++){
                     $id_producto_final = intval($id_producto_final) + intval($id_producto[$y]);
                 }
-                dd($id_producto_final);
+                dd(Producto::find($id_producto_final));
                 $nombre_producto = Producto::find($id_producto_final)['nombre'];
                 array_push($productos,$nombre_producto);
             }
