@@ -31,10 +31,10 @@ class EstadisticaController extends Controller
         $ayer = date('Y-m-d', strtotime ( '- 1 month' , strtotime ( $hoy ) ));
 
     
-        $enviados = Pedido::where('estado','pedido enviado')->get();
-        $en_cursos = Pedido::where('estado','en proceso')->get();
-        $en_caminos = Pedido::where('estado','en camino')->get();
-        $recibidos = Pedido::whereDate('created_at','>',$ayer)->whereDate('created_at','<=',$hoy)->get();
+        $enviados = Pedido::where('estado','pedido enviado')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
+        $en_cursos = Pedido::where('estado','en proceso')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
+        $en_caminos = Pedido::where('estado','en camino')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
+        $recibidos = Pedido::where('estado','recibido')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
 
         return view('estadisticas', [
             'enviados' => $enviados,

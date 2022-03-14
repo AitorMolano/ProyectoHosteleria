@@ -46,7 +46,7 @@ class ApiController extends Controller
             $n_mes=date("n",strtotime($mes_1));
             
             if($ya ==1){
-                $el_recibido = Pedido::where('estado','recibido')->whereDate('created_at','>=',$mes_1)->whereDate('created_at','<',$mes)->get();
+                $el_recibido = Pedido::where('estado','recibido')->whereDate('created_at','>',$mes_1)->whereDate('created_at','<=',$mes)->get();
                 $c_recibido[0] = $mes_1;
                 $c_recibido[1] = $el_recibido;
             if($c_recibido[1])
