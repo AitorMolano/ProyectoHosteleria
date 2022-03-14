@@ -3,9 +3,10 @@
 
     <?php
     $cantidad= count($pedidos);
+    $cantidad0= count($enviados);
     $cantidad1= count($en_cursos);
-    $cantidad2= count($preparados);
-    $cantidad3= count($recibidos);
+    $cantidad2= count($en_caminos);
+    $cantidad3= count($en_procesos);
     $cantidad4= count($c_recibidos);
     $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
     $contar =1;
