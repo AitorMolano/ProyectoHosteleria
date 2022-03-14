@@ -27,7 +27,12 @@ class PedidoController extends Controller
             $productos=[];
             $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
             foreach($carrito as $producto){
-                $nombre_producto = Producto::find($producto['id_producto'])['nombre'];
+                $id_producto = strval($producto['id']);
+                $id_producto_final = 0;
+                for($y=0;$y<strlen($id_producto);$y++){
+                    $id_producto_final = intval($id_producto_final) + intval($id_producto[$y]);
+                }
+                $nombre_producto = Producto::find($id_producto_final)['nombre'];
                 array_push($productos,$nombre_producto);
             }
            
@@ -47,7 +52,12 @@ class PedidoController extends Controller
             $productos=[];
             $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
             foreach($carrito as $producto){
-                $nombre_producto = Producto::find($producto['id'])['nombre'];
+                $id_producto = strval($producto['id']);
+                $id_producto_final = 0;
+                for($y=0;$y<strlen($id_producto);$y++){
+                    $id_producto_final = intval($id_producto_final) + intval($id_producto[$y]);
+                }
+                $nombre_producto = Producto::find($id_producto_final)['nombre'];
                 array_push($productos,$nombre_producto);
             }
             $id_cliente = strval($pedido['id_cliente']);
