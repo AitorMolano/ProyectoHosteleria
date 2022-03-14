@@ -17,7 +17,7 @@
     
         <h3>Pedidos actuales</h3>
         <div class="row">
-        <table class="table table-striped table-hover table-responsive">
+        <table style="width:80%;margin-left:10%;"class="table table-striped table-hover table-responsive">
         <tr>
                 <th>Enviados</th>
                 <th>En curso</th>
