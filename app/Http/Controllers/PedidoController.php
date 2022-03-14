@@ -52,9 +52,9 @@ class PedidoController extends Controller
         foreach($pedidos as $pedido){
             $productos=[];
             $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
-            dd($carrito);
             foreach($carrito as $producto){
                 $id_producto = strval($producto['id_producto']);
+                dd($id_producto);
                 $id_producto_final = 0;
                 for($y=0;$y<strlen($id_producto);$y++){
                     $id_producto_final = intval($id_producto_final) + intval($id_producto[$y]);
