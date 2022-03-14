@@ -43,7 +43,7 @@ class ProductoController extends Controller
         $producto->disponible = 1;
         $producto->cantidadMinima = request('cantidadMinima');
 
-        switch($request('categoria')){
+        switch(request('categoria')){
             case 'Fritos': $producto->categoria = 1;
                 break;
             case 'Entrantes': $producto->categoria = 11;
