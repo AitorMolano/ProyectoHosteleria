@@ -2,16 +2,14 @@
 @section('content')
     <div class="container">
         <div class="m-0 row d-flex justify-content-center align-items-center">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" style="max-width: 50%;">
                         <img src="{{ asset($producto->foto) }}" class="img-fluid">
                     </div>
                     <div class="col-lg-4">
                         <h3 class="box-title">{{ $producto -> nombre }}</h3>
                             <h4 class="box-title mt-2">Descripción</h4>
                             <p>{{ $producto->descripcion }}</p>
-                            <?php
-                                $disponible = $producto->disponible;
-                            ?>
+                            <?php $disponible = $producto->disponible?>
                             <button class="btn btn-success btn-rounded" id="btnDisponible" style="display:none;">Disponible</button>
                             <button class="btn btn-danger btn-rounded" id="btnNoDisponible" style="display:none;">No disponible</button>
                             

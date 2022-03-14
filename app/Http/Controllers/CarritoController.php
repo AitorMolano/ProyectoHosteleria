@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Pedido;
 use App\Models\Carrito;
 use App\Models\Producto;
 use App\Models\Pedido;
@@ -45,15 +45,29 @@ class CarritoController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $pedido = new Pedido;
         $pedido->id_cliente = request('id_cliente');
         $pedido->suma_Precio = request('suma_precio');
-        $pedido->estado = "en proceso";
-
+        $pedido->estado = "pedido enviado";
         $pedido->save();
 
-       echo '<script type="text/javascript">alert("Pedido realizado correctamente");</script>';
+        
+        $productos = $_COOKIE['carrito'];
+        $productos_array = explode(',',$productos);
+        
+        $pedido = Pedido::all();
+        $id_ultimoPedido = $pedido[sizeof($pedido)-1]['id'];
+        foreach($productos_array as $producto){ 
+            $carrito = new Carrito;
+            $carrito->id_producto = $producto;
+            $carrito->id_pedido = $id_ultimoPedido;
+            $carrito->save();
+        }
 
+        unset($_COOKIE['carrito']);
+        setcookie('carrito', null, -1, '/'); 
+        echo '<script type="text/javascript">alert("Pedido realizado correctamente");</script>';
         $productos = Producto::all();
         return redirect('/');
     }

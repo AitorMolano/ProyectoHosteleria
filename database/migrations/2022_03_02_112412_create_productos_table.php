@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::dropIfExists('productos');
 
         Schema::create('productos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('nombre');
             $table->string('precio');
             $table->string('foto');

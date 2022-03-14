@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::dropIfExists('pedidos');
 
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->unsignedInteger('id_cliente');
             $table->foreign('id_cliente')->references('id')->on('users');
             $table->integer('suma_Precio');
-            $table->enum('estado', ['recibido', 'en proceso', 'preparado'])->default('recibido');
+            $table->enum('estado', ['pedido enviado', 'en proceso','en camino','recibido' ])->default('pedido enviado');
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();

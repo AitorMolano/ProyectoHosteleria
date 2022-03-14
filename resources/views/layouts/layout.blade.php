@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hosteleria</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -10,11 +11,11 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
-<body class='bg-ligth' style="height: 100vh;">
-    <div  class="container-fluid" style="height:100%"> 
-        <header class='row'>
+<body class='bg-light user-select-none' style="height: 100vh;">
+    <div  class="container-fluid m-0 p-0" style="height:100%"> 
+        <header class='row' class="m-0 p-0" style="width: 100%;">
             
-        <nav class="navbar navbar-expand-md navbar-dark bg-purple shadow-sm">
+        <nav class="col-12 navbar navbar-expand-md navbar-dark bg-purple shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     Escuela Hosteleria
@@ -55,6 +56,12 @@
                                 <a class="dropdown-item" href="{{ route('createProduct') }}">Crear</a>
                                 <a class="dropdown-item" href="{{ route('indexEstadisticas') }}">Estadísticas</a>
                                 @endif    
+                                <a class="dropdown-item" href="{{route('pedidos-admin')}}">Ver todos los pedidos</a>
+                                
+                                @else
+                                <a class="dropdown-item" href="{{ route('pedidos') }}">Mis pedidos</a>
+                                @endif   
+                                <a class="dropdown-item" href="{{route('perfil')}}">Mi perfil</a> 
                                 <a id="logout" class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -79,24 +86,25 @@
                 var carrito ="[]";
                 carrito = JSON.parse(carrito);
                 sessionStorage.setItem("carrito", JSON.stringify(carrito));
-                document.cookie = "carrito =; max -age =0";
+                document.cookie = "carrito =; max-age =0";
                 alert("Carrito vaciado");
                 });
             </script>
         </header>
 
-        <main class='row'>
-            <div class='col-12 d-flex justify-content-center align-items-center'>
+        <main class='row' style="width: 100%;">
+            <div class='col-12 d-flex justify-content-center align-items-center h-25 m-0 p-0'>
                 <img src="{{ asset('img/logo.png') }}" class="img-fluid h-50"/>
             </div>
         
             @yield('content')
         </main>
-        <footer class="bg-dark text-white row d-flex mt-3 justify-content-between">     
+        <footer class="bg-dark text-white row d-flex mt-3 mb-0 justify-content-between" >     
             <p class='col-6 my-3 p-3'>FUNDACIÓN DIOCESANAS - JESÚS OBRERO FUNDAZIOA  © EGIBIDE</p>   
             <p class='col-6 my-3 p-3'>Diseñado por Aitor,Rafa,Alaitz :S | Desarrollado por Aitor,Rafa,Alaitz :D </p>       
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
 </body>
 </html>
