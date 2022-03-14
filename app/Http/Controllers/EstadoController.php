@@ -35,6 +35,6 @@ class EstadoController extends Controller
         $pedido->estado = $nuevo_estado;
         $pedido->save();
 
-        return redirect('/estado'.'/'.$id_pedido);
+        return redirect('/')->with('estado',true);
     }
 }

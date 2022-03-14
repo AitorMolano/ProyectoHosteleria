@@ -10,6 +10,7 @@
   
   <div class="row mx-auto">
     <div class="col-12">
+    <input type="hidden" name="estado" value="{{(isset($producto) || session('producto')) ? 'true' : ''}}" id='producto'/>
       <form action="{{ route('storeProduct')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">

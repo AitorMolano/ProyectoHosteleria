@@ -29,7 +29,6 @@ GENERAL
 */
     Auth::routes();
 
-    Route::get('/home', [ProductoController::class, 'index'])->name('home');
 
     Route::get('/', [ProductoController::class, 'index'])->name('home');
 

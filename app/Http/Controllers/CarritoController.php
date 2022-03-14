@@ -45,10 +45,11 @@ class CarritoController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+        $estado = "pedido enviado";
         $pedido = new Pedido;
         $pedido->id_cliente = request('id_cliente');
         $pedido->suma_Precio = request('suma_precio');
-        $pedido->estado = "pedido enviado";
+        $pedido->estado = $estado;
         $pedido->save();
 
         
@@ -66,8 +67,7 @@ class CarritoController extends Controller
 
         unset($_COOKIE['carrito']);
         setcookie('carrito', null, -1, '/'); 
-        $productos = Producto::all();
-        return view('home')->with('compra_realizada',true);
+        return redirect('/')->with('compra_realizada',true);
     }
 
     /**

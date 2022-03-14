@@ -3,8 +3,15 @@
 <div class="container m-0 p-0 px-lg-5 mt-5 user-select-none">
     <div class="row">
         <div class="col-12">
-            <input type="hidden" name="compra-realizada" value='{{$compra_realizada}}' id='compra'/>
-            <input type="hidden" name="producto_guardado" value='{{$producto_guardado}}' id='producto_guardado'/>
+            @php
+                //dd(session('compra_realizada')); 
+            @endphp
+            <input type="hidden" name="compra-realizada" value="{{(isset($compra_realizada) || session('compra_realizada')) ? 'true' : ''}}" id='compra'/>
+            <input type="hidden" name="producto_guardado" value="{{(isset($producto_guardado) || session('producto_guardado')) ? 'true' : ''}}" id='producto_guardado'/>
+            <input type="hidden" name="estado" value="{{(isset($estado) || session('estado')) ? 'true' : ''}}" id='estado'/>
+            <input type="hidden" name="estado" value="{{(isset($producto_actualizado) || session('producto_actualizado')) ? 'true' : ''}}" id='producto_actualizado'/>
+            <input type="hidden" name="estado" value="{{(isset($perfil) || session('perfil')) ? 'true' : ''}}" id='perfil'/>
+            <input type="hidden" name="estado" value="{{(isset($eliminar) || session('eliminar')) ? 'true' : ''}}" id='eliminar'/>
             <form action="#" method="get" class="">
                 <div class="row">
                     <div class="col-12 col-sm-2 mx-2 mx-sm-5">

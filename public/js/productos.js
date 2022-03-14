@@ -85,11 +85,51 @@ function primeros12(){
             timer: 1500
           })
     }
+
     if(document.getElementById('producto_guardado').value){
         Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Compra realizada',
+            title: 'Producto guardado',
+            showConfirmButton: false,
+            timer: 2000
+          })
+    }
+
+    if(document.getElementById('estado').value){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Estado actualizado',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
+
+    if(document.getElementById('producto_actualizado').value){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Producto actualizado',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
+
+    if(document.getElementById('perfil').value){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Perfil actualizado',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
+    if(document.getElementById('eliminar').value){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Producto eliminado',
             showConfirmButton: false,
             timer: 1500
           })

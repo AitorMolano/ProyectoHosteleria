@@ -15,7 +15,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('home')->with('compra_realizada',false)->with('producto_guardado',false);
+        return view('home');
     }
 
     /**
@@ -46,21 +46,21 @@ class ProductoController extends Controller
         switch(request('categoria')){
             case 'Fritos': $producto->categoria = 1;
                 break;
-            case 'Entrantes': $producto->categoria = 11;
+            case 'Entrantes': $producto->categoria = 2;
                 break;
-            case 'Pescado': $producto->categoria = 21;
+            case 'Pescado': $producto->categoria = 3;
                 break;
-            case 'Carne': $producto->categoria = 31;
+            case 'Carne': $producto->categoria = 4;
                 break;
-            case 'Semifrios': $producto->categoria = 41;
+            case 'Semifrios': $producto->categoria = 5;
                 break;
-            case 'Tarta de bizcocho': $producto->categoria = 51;
+            case 'Tarta de bizcocho': $producto->categoria = 6;
                 break;
-            case 'Tarta de hojaldre': $producto->categoria = 61;
+            case 'Tarta de hojaldre': $producto->categoria = 7;
                 break;
-            case 'Tartas variadas': $producto->categoria = 71;
+            case 'Tartas variadas': $producto->categoria = 8;
                 break;
-            case 'Variedades': $producto->categoria = 81;
+            case 'Variedades': $producto->categoria = 9;
                 break;
         }
         if($request->hasFile('foto')){
@@ -71,12 +71,12 @@ class ProductoController extends Controller
             $producto->foto = 'fotos/'.$foto_nueva;
         }
         else{
-            echo '<script type="text/javascript">alert("No entra en foto");</script>';
+            return redirect('producto/create')->with('producto',true);
         }
 
         $producto->save();
 
-        return view('home')->with('producto_guardado',true);
+        return redirect('/')->with('producto_guardado',true);
     }
 
     /**
@@ -127,20 +127,15 @@ class ProductoController extends Controller
         }
 
         $producto->save();
-
-        echo '<script type="text/javascript">alert("Producto editado correctamente");</script>';
-
-        $productos = Producto::all();
-        return redirect('home');
+        return redirect('/')->with('producto_actualizado',true);
     }
 
     public function destroy($id)
     {
         $producto = Producto::find($id);
-        $producto->delete();
+        $producto->destroy($id);
 
-        echo '<script type="text/javascript">alert("Producto eliminado correctamente");</script>';
 
-        return redirect('home');
+        return redirect('/')->with('eliminar',true);
     }
 }
