@@ -15,7 +15,11 @@
             <?php
           }
           else{
+            ?>
+             <p><span class="h2">Carrito</span></p>
 
+<div class="card mb-4">
+            <?php
             $total = 0;
                 $numeros =  $_COOKIE["carrito"];
                 $elementos = explode(",", $numeros);
@@ -35,9 +39,7 @@
                     $preciototal = $elProducto->precio * $cantidad;
                     $total += $preciototal;
         ?> 
-        <p><span class="h2">Carrito</span></p>
-
-        <div class="card mb-4">
+       
           <div class="card-body p-4">
             <div class="row align-items-center justify-content-center">
               <div class="col-md-2 d-flex justify-content-center" style="max-width: 50%;">
