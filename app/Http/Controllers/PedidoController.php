@@ -52,6 +52,7 @@ class PedidoController extends Controller
         foreach($pedidos as $pedido){
             $productos=[];
             $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
+            dd($carrito);
             foreach($carrito as $producto){
                 $id_producto = strval($producto['id_producto']);
                 $id_producto_final = 0;
@@ -70,7 +71,6 @@ class PedidoController extends Controller
             }
             array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado'],'id_cliente'=>$id_cliente_final ]);
         }
-        dd($carrito);
         
         return view('pedidos-admin')->with('carrito_total',$carrito_total);
     }
