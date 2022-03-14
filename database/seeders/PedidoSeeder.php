@@ -20,23 +20,22 @@ class PedidoSeeder extends Seeder
             'id_cliente' =>71,
             'suma_precio'=>17.40,
             'estado'=>'recibido',
-            'created at' => Carbon::now(),
-            'updated at' => Carbon::now()
-            
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
         DB::table('pedidos')->insert([
             'id_cliente' =>71,
             'suma_precio'=>31,
             'estado'=>'recibido',
-            'created at' => Carbon::now(),
-            'updated at' => Carbon::now()
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
         DB::table('pedidos')->insert([
             'id_cliente' =>61,
             'suma_precio'=>31,
             'estado'=>'en proceso',
-            'created at' => Carbon::now(),
-            'updated at' => Carbon::now()
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
     }
 }
