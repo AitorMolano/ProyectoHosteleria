@@ -55,6 +55,7 @@ class PedidoController extends Controller
             foreach($carrito as $producto){
                 $id_producto = strval($producto['id']);
                 $id_producto_final = 0;
+                dd($id_producto_final);
                 for($y=0;$y<strlen($id_producto);$y++){
                     $id_producto_final = intval($id_producto_final) + intval($id_producto[$y]);
                 }
