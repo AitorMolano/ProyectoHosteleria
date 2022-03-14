@@ -14,7 +14,7 @@
                             <button class="btn btn-danger btn-rounded" id="btnNoDisponible" style="display:none;">No disponible</button>
                             
                             <h2 class="mt-5">{{ $producto->precio }} €</h2>
-                            <button class="btn btn-dark btn-rounded mr-1 carrito" id="anadirCarrito" data-toggle="tooltip" title="" data-original-title="Add to cart">
+                            <button class="btn btn-dark btn-rounded mr-1 carrito" id="{{$producto->id}}" data-toggle="tooltip" title="" data-original-title="Add to cart">
                                 <i class="fa fa-shopping-cart"></i>
                             </button>
                             <input type="hidden" id="producto-id" value="{{ $producto -> id }}" />
