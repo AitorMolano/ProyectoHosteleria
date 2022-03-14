@@ -8,6 +8,13 @@
 
         <div class="card mb-4">
         <?php 
+          if ($lleno == 0) {
+            ?>
+            <h1>Vacio</h1>
+            <?php
+          }
+          else{
+
             $total = 0;
                 $numeros =  $_COOKIE["carrito"];
                 $elementos = explode(",", $numeros);
@@ -135,6 +142,7 @@
                     </form>
             <?php
                 }
+          }
             ?>
         </div>
       </div>

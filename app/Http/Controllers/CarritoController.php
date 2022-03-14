@@ -78,11 +78,18 @@ class CarritoController extends Controller
      */
     public function show(Carrito $carrito)
     {
-        $productos = Producto::all();
+        $lleno = 0;
+        $productos="";
+
+        if ($_COOKIE["carrito"]) {
+            $productos = Producto::all();
+            $lleno = 1;
+        }
+
         return view('carrito', [
-            'productos' => $productos
+            'productos' => $productos,
+            'lleno' => $lleno
         ]);
-    
     
     }
 
