@@ -14,7 +14,7 @@
                             <button class="btn btn-danger btn-rounded" id="btnNoDisponible" style="display:none;">No disponible</button>
                             
                             <h2 class="mt-5">{{ $producto->precio }} €</h2>
-                            <button class="btn btn-dark btn-rounded mr-1" id="anadirCarrito" data-toggle="tooltip" title="" data-original-title="Add to cart">
+                            <button class="btn btn-dark btn-rounded mr-1 carrito" id="anadirCarrito" data-toggle="tooltip" title="" data-original-title="Add to cart">
                                 <i class="fa fa-shopping-cart"></i>
                             </button>
                             <input type="hidden" id="producto-id" value="{{ $producto -> id }}" />
@@ -39,6 +39,39 @@
             document.getElementById("anadir").style.display = "none";
         }else{
             document.getElementById("btnDisponible").style.display = "block";
+        }
+
+        let carritos = document.getElementsByClassName('carrito');
+        for(i=0; i<carritos.length; i++) {
+            carritos[i].addEventListener('click', function(e) {
+                if(carrito2 =="")
+                    carrito2 += this.id;
+                else
+                    carrito2 +=","+ this.id;
+
+                document.cookie = "carrito="+carrito2 +"; path=/";
+                mostrarAlert()
+            });
+        }
+
+
+        function mostrarAlert(){
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            
+            Toast.fire({
+                icon: 'success',
+                title: 'Producto añadido al carrito correctamente'
+            })
         }
     </script>
 

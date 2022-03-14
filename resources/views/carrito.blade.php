@@ -8,7 +8,7 @@
             ?>
        
             <div class="row d-flex justify-content-center">
-              <h1>Carrito vacío</h1>
+              <h1 style="text-align: center;">Carrito vacío</h1>
               <button class="btn btn-light btn-lg me-2 p-1 px-2 bg-graydark"><a class="text-decoration-none text-black" href="{{ route('home') }}">Volver a la tienda</a></button>
             </div>
 
