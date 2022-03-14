@@ -36,8 +36,9 @@ class ApiController extends Controller
 
         $hoy = date('Y-m-d ');
         $ayer = date('Y-m-d', strtotime ( '- 1 month' , strtotime ( $hoy ) ));
+        $enviados = Pedido::where('estado','producto enviado')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
         $en_cursos = Pedido::where('estado','en proceso')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
-        $preparados = Pedido::where('estado','preparado')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
+        $en_caminos = Pedido::where('estado','en camino')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
         $recibidos = Pedido::where('estado','recibido')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
         
         $meses = [36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1];
