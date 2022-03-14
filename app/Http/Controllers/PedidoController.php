@@ -27,13 +27,7 @@ class PedidoController extends Controller
             $productos=[];
             $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
             foreach($carrito as $producto){
-                $id_producto = strval($producto['id']);
-                $id_producto_final = 0;
-                for($y=0;$y<strlen($id_producto);$y++){
-                    $id_producto_final = intval($id_producto_final) + intval($id_producto[$y]);
-                }
-                dd($id_producto_final);
-                $nombre_producto = Producto::find($id_producto_final)['nombre'];
+                $nombre_producto = Producto::find($producto['id_producto'])['nombre'];
                 array_push($productos,$nombre_producto);
             }
            
@@ -47,19 +41,11 @@ class PedidoController extends Controller
         $hoy = date('Y-m-d ');
         $ayer = date('Y-m-d', strtotime ( '- 1 month' , strtotime ( $hoy ) ));
         $pedidos = Pedido::whereDate('created_at','>',$ayer)->whereDate('created_at','<=',$hoy)->get();
-                
-        //$pedidos = Pedido::all();
         foreach($pedidos as $pedido){
             $productos=[];
             $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
             foreach($carrito as $producto){
-                $id_producto = strval($producto['id_producto']);
-                $id_producto_final = 0;
-                for($y=0;$y<strlen($id_producto);$y++){
-                    $id_producto_final = intval($id_producto_final) + intval($id_producto[$y]);
-                }
-                dd(Producto::find(2));
-                $nombre_producto = Producto::find($id_producto_final)['nombre'];
+                $nombre_producto = Producto::find($producto['id_producto'])['nombre'];
                 array_push($productos,$nombre_producto);
             }
             $id_cliente = strval($pedido['id_cliente']);
