@@ -29,7 +29,7 @@ class EstadisticaController extends Controller
         $pedidos = Pedido::all();
         $hoy = date('Y-m-d ');
         $ayer = date('Y-m-d', strtotime ( '- 1 month' , strtotime ( $hoy ) ));
-        $enviados = Pedido::where('estado','producto enviado')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
+        $enviados = Pedido::where('estado','pedido enviado')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
         $en_cursos = Pedido::where('estado','en proceso')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
         $en_caminos = Pedido::where('estado','en camino')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
         $recibidos = Pedido::where('estado','recibido')->whereDate('created_at','>=',$ayer)->whereDate('created_at','<',$hoy)->get();
