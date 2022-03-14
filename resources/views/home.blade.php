@@ -3,6 +3,8 @@
 <div class="container m-0 p-0 px-lg-5 mt-5 user-select-none">
     <div class="row">
         <div class="col-12">
+            <input type="hidden" name="compra-realizada" value='{{$compra_realizada}}' id='compra'/>
+            <input type="hidden" name="producto_guardado" value='{{$producto_guardado}}' id='producto_guardado'/>
             <form action="#" method="get" class="">
                 <div class="row">
                     <div class="col-12 col-sm-2 mx-2 mx-sm-5">

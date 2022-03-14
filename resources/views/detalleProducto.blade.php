@@ -42,23 +42,4 @@
         }
     </script>
 
-    <script>
-        var carrito="";
-        var lasCookies = document.cookie;
-        arrayCookies = lasCookies.split(" ");
-            for (i=0; i<arrayCookies.length ; i++){
-                if (arrayCookies[i].charAt(0)=="c")
-                carrito = arrayCookies[i];
-                carrito2= carrito.slice(8,-1);
-            }
-        document.getElementById("anadirCarrito").addEventListener("click", function(e) {
-            id = document.getElementById("producto-id").value;
-            if (carrito2 == "") {
-                carrito2 +=id;
-            }else{
-                carrito2 +=","+ id;
-            }
-            document.cookie = "carrito="+carrito2 +"; path=/";
-    });
-    </script>
 @endsection

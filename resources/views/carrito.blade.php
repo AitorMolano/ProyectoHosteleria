@@ -131,7 +131,7 @@
                         @csrf      
                         <input type="hidden" name="id_cliente"  id="id_cliente" value="{{ Auth::user()->id }}" />
                         <input type="hidden" name="suma_precio" id="suma_precio" value="{{$total}}" />
-                        <button type="submit" class="btn btn-primary">Comprar</button>
+                        <button type="submit" onclick='btn_comprar()' class="btn btn-primary">Comprar</button>
                     </form>
             <?php
                 }
@@ -140,5 +140,4 @@
       </div>
     </div>
   </div>
-
   @endsection

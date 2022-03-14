@@ -73,7 +73,7 @@
                 </select>
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center mt-3">
-                        <button type="submit" class="btn btn-graydark">Aceptar Cambios</button>   
+                        <button type="submit" onclick="btn_estado()" class="btn btn-graydark">Aceptar Cambios</button>   
                             
                         <button type="button" class="btn btn-graydark mx-2"><a href="{{route('pedidos-admin')}}" class="text-black text-decoration-none">Volver Atras</a></button>       
                     </div>
@@ -85,4 +85,5 @@
 </div>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 @endsection

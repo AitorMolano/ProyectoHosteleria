@@ -15,7 +15,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home')->with('compra_realizada',false)->with('producto_guardado',false);
     }
 
     /**
@@ -56,10 +56,7 @@ class ProductoController extends Controller
 
         $producto->save();
 
-       echo '<script type="text/javascript">alert("Producto insertado correctamente");</script>';
-
-        $productos = Producto::all();
-        return redirect('/');
+        return view('home')->with('producto_guardado',true);
     }
 
     /**

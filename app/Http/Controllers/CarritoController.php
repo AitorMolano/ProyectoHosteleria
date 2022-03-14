@@ -66,9 +66,8 @@ class CarritoController extends Controller
 
         unset($_COOKIE['carrito']);
         setcookie('carrito', null, -1, '/'); 
-        echo '<script type="text/javascript">alert("Pedido realizado correctamente");</script>';
         $productos = Producto::all();
-        return redirect('/');
+        return view('home')->with('compra_realizada',true);
     }
 
     /**
