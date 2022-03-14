@@ -41,7 +41,7 @@ class EstadisticaController extends Controller
         foreach($meses as $el_mes){
             
             $mes_1 = date('Y-m-d', strtotime ( '-'.$el_mes.' month' , strtotime ( $hoy ) ));
-            $mes = date('Y-m-d', strtotime ( '+ 1 month' , strtotime ( $mes_1 ) ));
+            $mes = date('Y-m-d', strtotime ( '- 1 month' , strtotime ( $mes_1 ) ));
             $n_mes=date("n",strtotime($mes_1));
             
             if($ya ==1){
