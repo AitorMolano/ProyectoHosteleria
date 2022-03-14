@@ -25,7 +25,7 @@
                                 <form method="POST" action="{{ route('borrarProducto', $producto->id) }}">
                                     @method('DELETE')
                                     @csrf
-                                    <input type="submit" value="Borrar" class="btn btn-danger btn-outline-dark mt-auto">
+                                    <input type="submit" value="Borrar" class="btn btn-danger btn-outline-dark mt-2">
                                 </form>  
                                 @endif
                             @endif

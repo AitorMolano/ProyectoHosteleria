@@ -29,7 +29,7 @@ class PerfilController extends Controller
             $user->telefono = $telefono;
             $user->direccion = $direccion;
             $user->save();
-           return redirect('perfil');
+           return redirect('/')->with('perfil',true);
         }
       
     }
