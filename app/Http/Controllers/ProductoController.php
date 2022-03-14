@@ -36,14 +36,33 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
         $producto = new Producto;
         $producto->nombre = request('nombre');
         $producto->precio = request('precio');
         $producto->descripcion = request('descripcion');
         $producto->disponible = 1;
         $producto->cantidadMinima = request('cantidadMinima');
-        $producto->categoria = request('categoria');
+
+        switch($request('categoria')){
+            case 'Fritos': $producto->categoria = 1;
+                break;
+            case 'Entrantes': $producto->categoria = 11;
+                break;
+            case 'Pescado': $producto->categoria = 21;
+                break;
+            case 'Carne': $producto->categoria = 31;
+                break;
+            case 'Semifrios': $producto->categoria = 41;
+                break;
+            case 'Tarta de bizcocho': $producto->categoria = 51;
+                break;
+            case 'Tarta de hojaldre': $producto->categoria = 61;
+                break;
+            case 'Tartas variadas': $producto->categoria = 71;
+                break;
+            case 'Variedades': $producto->categoria = 81;
+                break;
+        }
         if($request->hasFile('foto')){
             $foto = $request->file('foto');
             $foto_nueva  = $foto->getClientOriginalName();
