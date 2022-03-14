@@ -42,17 +42,17 @@ PRODUCTOS
 ----------------------------------------------
  */
 
-Route::get('producto/create', [ProductoController::class, 'create'])->name('createProduct');
+Route::get('producto/create', [ProductoController::class, 'create'])->middleware('auth')->name('createProduct');
 
 Route::get('producto/{id}', [ProductoController::class, 'show'])->name('detalleProd');
 
-Route::post('producto/store', [ProductoController::class, 'store'])->name('storeProduct');
+Route::post('producto/store', [ProductoController::class, 'store'])->middleware('auth')->name('storeProduct');
 
-Route::delete('producto/{id}', [ProductoController::class, 'destroy'])->name('borrarProducto');
+Route::delete('producto/{id}', [ProductoController::class, 'destroy'])->middleware('auth')->name('borrarProducto');
 
-Route::get('producto/{id}/edit', [ProductoController::class, 'edit'])->name('editProducto');
+Route::get('producto/{id}/edit', [ProductoController::class, 'edit'])->middleware('auth')->name('editProducto');
 
-Route::put('editarProducto/{id}', [ProductoController::class, 'update'])->name('actualizar');
+Route::put('editarProducto/{id}', [ProductoController::class, 'update'])->middleware('auth')->name('actualizar');
 
 
 /*
@@ -66,25 +66,24 @@ Route::get('carrito/index', [CarritoController::class, 'index'])->name('indexCar
 
 Route::get('carrito/show', [CarritoController::class, 'show'])->name('showCarrito');
 
-Route::post('carrito/store', [CarritoController::class, 'store'])->name('storeCarrito');
+Route::post('carrito/store', [CarritoController::class, 'store'])->middleware('auth')->name('storeCarrito');
 
-Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
 /*
 ----------------------------------------------
 PEDIDO
 ----------------------------------------------
  */
 
-Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
-Route::get('/pedidos-admin', [PedidoController::class, 'indexAdmin'])->name('pedidos-admin');
+Route::get('/pedidos', [PedidoController::class, 'index'])->middleware('auth')->name('pedidos');
+Route::get('/pedidos-admin', [PedidoController::class, 'indexAdmin'])->middleware('auth')->name('pedidos-admin');
 
-Route::get('/estado/{id}', [EstadoController::class, 'show'])->name('estado.show');
+Route::get('/estado/{id}', [EstadoController::class, 'show'])->middleware('auth')->name('estado.show');
 
-Route::post('/pedidos/admin', [EstadoController::class, 'update'])->name('pedidos.update'); 
+Route::post('/pedidos/admin', [EstadoController::class, 'update'])->middleware('auth')->name('pedidos.update'); 
 /*
 ----------------------------------------------
 PERFIL
 ----------------------------------------------
  */
-Route::get('/perfil', [PerfilController::class, 'index'])->name('perfil');
-Route::post('/perfil/store', [PerfilController::class, 'store'])->name('perfil.store');
+Route::get('/perfil', [PerfilController::class, 'index'])->middleware('auth')->name('perfil');
+Route::post('/perfil/store', [PerfilController::class, 'store'])->middleware('auth')->name('perfil.store');
