@@ -24,6 +24,7 @@ $(document).ready(function(){
 
 function estadisticas_obtener(){
     cantidad = estadisticas.length;
+    console.log(estadisticas);
     for(let z=0; z<12 ;z++){
         ano1.push(estadisticas[z][1].length);
     }
