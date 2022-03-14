@@ -153,7 +153,7 @@ function filtroCategoria(){
             break;
         case 'Entrantes':
                 for(let x =0;x<todos_productos.length;x++){
-                    if(todos_productos[x]['categoria'] == 2){
+                    if(todos_productos[x]['categoria'] == 11){
                         productos_filtrados.push(todos_productos[x]);
                     }
                 }
@@ -161,7 +161,7 @@ function filtroCategoria(){
             break;
         case 'Pescado':
             for(let x =0;x<todos_productos.length;x++){
-                if(todos_productos[x]['categoria'] == 3){
+                if(todos_productos[x]['categoria'] == 21){
                     productos_filtrados.push(todos_productos[x]);
                 }
             }
@@ -169,7 +169,7 @@ function filtroCategoria(){
             break;
         case 'Carne':
             for(let x =0;x<todos_productos.length;x++){
-                if(todos_productos[x]['categoria'] == 4){
+                if(todos_productos[x]['categoria'] == 31){
                     productos_filtrados.push(todos_productos[x]);
                 }
             }
@@ -177,7 +177,7 @@ function filtroCategoria(){
             break;
         case 'Semifrios':
             for(let x =0;x<todos_productos.length;x++){
-                if(todos_productos[x]['categoria'] == 5){
+                if(todos_productos[x]['categoria'] == 41){
                     productos_filtrados.push(todos_productos[x]);
                 }
             }
@@ -185,7 +185,7 @@ function filtroCategoria(){
             break;
         case 'Tarta de bizcocho':
             for(let x =0;x<todos_productos.length;x++){
-                if(todos_productos[x]['categoria'] == 6){
+                if(todos_productos[x]['categoria'] == 51){
                     productos_filtrados.push(todos_productos[x]);
                 }
             }
@@ -193,7 +193,7 @@ function filtroCategoria(){
             break;
         case 'Tarta de hojaldre':
             for(let x =0;x<todos_productos.length;x++){
-                if(todos_productos[x]['categoria'] == 7){
+                if(todos_productos[x]['categoria'] == 61){
                     productos_filtrados.push(todos_productos[x]);
                 }
             }
@@ -201,7 +201,7 @@ function filtroCategoria(){
             break;
         case 'Tartas variadas':
             for(let x =0;x<todos_productos.length;x++){
-                if(todos_productos[x]['categoria'] == 8){
+                if(todos_productos[x]['categoria'] == 71){
                     productos_filtrados.push(todos_productos[x]);
                 }
             }
@@ -209,7 +209,7 @@ function filtroCategoria(){
             break;
         case 'Variedades':
             for(let x =0;x<todos_productos.length;x++){
-                if(todos_productos[x]['categoria'] == 9){
+                if(todos_productos[x]['categoria'] == 81){
                     productos_filtrados.push(todos_productos[x]);
                 }
             }
