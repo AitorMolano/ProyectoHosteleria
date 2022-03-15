@@ -24,7 +24,7 @@ return new class extends Migration
             $table->boolean('disponible');
             $table->integer('cantidadMinima');
             $table->unsignedBigInteger('categoria');
-            $table->foreign('categoria')->references('id')->on('categorias');
+            $table->foreign('categoria')->references('id')->on('categorias')->cascadeOnDelete();
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();

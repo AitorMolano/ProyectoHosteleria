@@ -18,7 +18,7 @@ return new class extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('id_cliente');
-            $table->foreign('id_cliente')->references('id')->on('users');
+            $table->foreign('id_cliente')->references('id')->on('users')->cascadeOnDelete();
             $table->integer('suma_Precio');
             $table->enum('estado', ['pedido enviado', 'en proceso','en camino','recibido' ])->default('pedido enviado');
             $table->timestamps();
