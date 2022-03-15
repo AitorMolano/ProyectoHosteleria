@@ -46,21 +46,21 @@ class ProductoController extends Controller
         switch(request('categoria')){
             case 'Fritos': $producto->categoria = 1;
                 break;
-            case 'Entrantes': $producto->categoria = 2;
+            case 'Entrantes': $producto->categoria = 11;
                 break;
-            case 'Pescado': $producto->categoria = 3;
+            case 'Pescado': $producto->categoria = 21;
                 break;
-            case 'Carne': $producto->categoria = 4;
+            case 'Carne': $producto->categoria = 31;
                 break;
-            case 'Semifrios': $producto->categoria = 5;
+            case 'Semifrios': $producto->categoria = 41;
                 break;
-            case 'Tarta de bizcocho': $producto->categoria = 6;
+            case 'Tarta de bizcocho': $producto->categoria = 51;
                 break;
-            case 'Tarta de hojaldre': $producto->categoria = 7;
+            case 'Tarta de hojaldre': $producto->categoria = 61;
                 break;
-            case 'Tartas variadas': $producto->categoria = 8;
+            case 'Tartas variadas': $producto->categoria = 71;
                 break;
-            case 'Variedades': $producto->categoria = 9;
+            case 'Variedades': $producto->categoria = 81;
                 break;
         }
         if($request->hasFile('foto')){
