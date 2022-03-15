@@ -117,7 +117,6 @@ class ProductoController extends Controller
         $producto->descripcion = request('descripcion');
         $producto->disponible = request("radioDis");
         $producto->cantidadMinima = request('cantidadMinima');
-
         if($request->hasFile('foto')){
             $foto = $request->file('foto');
             $foto_nueva  = $foto->getClientOriginalName();
