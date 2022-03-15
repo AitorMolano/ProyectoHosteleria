@@ -16,30 +16,30 @@ class CarritoSeeder extends Seeder
     public function run()
     {
         DB::table('carritos')->insert([
-            'id_producto'=>2,
+            'id_producto'=>11,
             'id_pedido'=>1,
         ]);
         DB::table('carritos')->insert([
-            'id_producto'=>3,
+            'id_producto'=>21,
             'id_pedido'=>1,
         ]);
         DB::table('carritos')->insert([
-            'id_producto'=>4,
+            'id_producto'=>31,
             'id_pedido'=>1,
         ]);
 
         DB::table('carritos')->insert([
-            'id_producto'=>34,
-            'id_pedido'=>2,
+            'id_producto'=>331,
+            'id_pedido'=>11,
         ]);
         DB::table('carritos')->insert([
-            'id_producto'=>32,
-            'id_pedido'=>2,
+            'id_producto'=>311,
+            'id_pedido'=>11,
         ]);
 
         DB::table('carritos')->insert([
-            'id_producto'=>32,
-            'id_pedido'=>3,
+            'id_producto'=>311,
+            'id_pedido'=>21,
         ]);
         
     }

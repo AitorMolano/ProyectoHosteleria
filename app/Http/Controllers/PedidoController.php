@@ -41,13 +41,11 @@ class PedidoController extends Controller
         $hoy = date('Y-m-d ');
         $ayer = date('Y-m-d', strtotime ( '- 1 month' , strtotime ( $hoy ) ));
         $pedidos = Pedido::whereDate('created_at','>',$ayer)->whereDate('created_at','<=',$hoy)->get();
-                
-        //$pedidos = Pedido::all();
         foreach($pedidos as $pedido){
             $productos=[];
             $carrito = Carrito::all()->where('id_pedido','like',$pedido['id']);
             foreach($carrito as $producto){
-                $nombre_producto = Producto::find($producto['id'])['nombre'];
+                $nombre_producto = Producto::find($producto['id_producto'])['nombre'];
                 array_push($productos,$nombre_producto);
             }
             $id_cliente = strval($pedido['id_cliente']);
@@ -58,7 +56,6 @@ class PedidoController extends Controller
             }
             array_push($carrito_total,['id_pedido'=>$pedido['id'],'productos'=>$productos,'suma'=>$pedido['suma_Precio'],'estado'=>$pedido['estado'],'id_cliente'=>$id_cliente_final ]);
         }
-        // dd($carrito_total);
         
         return view('pedidos-admin')->with('carrito_total',$carrito_total);
     }
